@@ -225,3 +225,32 @@ D:\Github\oppp\cuongvanphap\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplet
 D:\Github\oppp\cuongvanphap\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 D:\Github\oppp\cuongvanphap\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
 >>>>>>> 6ab327071f3b0ee2ca3ad8e24d69bb99981a2935
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\Demo.mdb
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.exe.config
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.exe
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.pdb
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\Aspose.Words.dll
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\Aspose.Words.Pdf2Word.dll
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.dll
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\Aspose.Words.xml
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.xml
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.AssemblyReference.cache
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.SuggestedBindingRedirects.cache
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.ChangePassword.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.ChuBai.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateChuBai.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauAn.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauSieu.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.Login.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.form_manage.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.Properties.Resources.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauAn.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauSieu.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.SoCauAn.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.SoCauSieu.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.TimChuBai.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.GenerateResource.cache
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.cache
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.exe
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
