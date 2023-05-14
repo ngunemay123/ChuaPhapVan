@@ -1,6 +1,6 @@
-﻿/*using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-using DocumentFormat.OpenXml;*/
+using DocumentFormat.OpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,17 +17,12 @@ using ListView = System.Windows.Forms.ListView;
 using Color = System.Drawing.Color;
 using System.Diagnostics;
 using System.IO;
-using Microsoft.Office.Interop.Word;
-using DocumentFormat.OpenXml.Bibliography;
-using Application = Microsoft.Office.Interop.Word.Application;
-using System.Globalization;
-using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\oppp\\cuongvanphap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -74,9 +69,9 @@ namespace VanPhap.View
             cuon();
             HienDanhSach();
         }
-        public async System.Threading.Tasks.Task cuon()
+        public async Task cuon()
         {
-            await System.Threading.Tasks.Task.Delay(100);
+            await Task.Delay(100);
             string cuong = loaiso;
             
 
@@ -99,7 +94,7 @@ namespace VanPhap.View
             txt_nguyenquan.Text = nguyenquan;
 
             string idso = txt_idchubai.Text;
-            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso AND NamMat = 0;";
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso AND NamMat IS NULL";
             //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
 
 
@@ -145,14 +140,7 @@ namespace VanPhap.View
 
         public void CheckGioiTinh()
         {
-            if (rbm_Man.Checked)
-            {
-                txt_gioi_tinh.Text = "Nam";
-            }
-            else if (rbm_Woman.Checked)
-            {
-                txt_gioi_tinh.Text = "Nữ";
-            }
+            
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
@@ -298,63 +286,49 @@ namespace VanPhap.View
             }
             else
             {
-
-
-                List<List<string>> ls = new List<List<string>>();
-                int count = 0;
-                foreach (ListViewItem item in lsv_danhsach_cauan.Items)
+               
+                if (lsv_danhsach_cauan.SelectedItems.Count > 0)
                 {
+                    // Lấy giá trị khóa chính từ dòng đang chọn
 
-                    if (item.Checked)
-                    {
-                        ls.Add(new List<string>());
-                        ls[count].Add(item.SubItems[8].Text);
-                        ls[count].Add(item.SubItems[9].Text);
-                        count++;
-                    }
+                    string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[8].Text; // Giả sử khóa chính ở cột đầu tiên
+                    string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[9].Text;
 
-                }
-                if(count > 0)
-                {
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
                         connection.Open();
+
+
                         // Thực hiện câu lệnh DELETE
-                        
-                        try
+                        string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
+
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
                         {
-                            for (int i = 0; i < count; i++)
-                            {
-                                string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
-                                using (OleDbCommand command = new OleDbCommand(query, connection))
-                                {
-                                    command.Parameters.AddWithValue("@id", ls[i][0]);
-                                    command.Parameters.AddWithValue("@idso", ls[i][1]);
-                                    command.ExecuteNonQuery();
-                                   
-                                }
-                            }
+                            command.Parameters.AddWithValue("@id", id);
+                            command.Parameters.AddWithValue("@idso", idso);
+                            command.ExecuteNonQuery();
+                        }
+                        if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                        {
+                            // Xóa thành công
                             MessageBox.Show("Xóa thành công");
                             HienDanhSach();
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.ToString());
-
+                            // Không có dòng nào được xóa
+                            MessageBox.Show("Không có dòng nào được xóa");
                         }
                     }
-                }
+                }//Dong if
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn người để xóa");
+                    MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
 
-                    
                 }
+
             }
         }
-
-            
-        
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
@@ -387,79 +361,86 @@ namespace VanPhap.View
 
         }
 
-      /*  public void btn_print_Click(object sender, EventArgs e)
-        {
-            List<string> user = new List<string>();
-            List<List<string>> ls = new List<List<string>>();
-            int count = 0;
+        /* public void btn_print_Click(object sender, EventArgs e)
+         {
+                 List<string> user = new List<string>();
+                 List<List<string>> ls = new List<List<string>>();
+                 int count = 0;
 
-            *//*lsv_danhsach_cauan.SelectedIndexChanged += lsv_danhsach_cauan_SelectedIndexChanged;
-            if (lsv_danhsach_cauan.SelectedItems.Count > 0)
-            {
-                // Xử lý lựa chọn dòng được chọn
-                ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
-                string name = selectedItem.SubItems[1].Text; // Lấy giá trị của cột
-                txt_id.Text = name;
-            }*//*
-            foreach (ListViewItem item in lsv_danhsach_cauan.Items)
-            {
-                if (item.Checked)
-                {
-                    ls.Add(new List<string>());
-                    ls[count].Add(item.SubItems[1].Text);
-                    ls[count].Add(item.SubItems[2].Text);
-                    ls[count].Add(item.SubItems[3].Text);
-                    ls[count].Add(item.SubItems[4].Text);
-                    ls[count].Add(item.SubItems[5].Text);
-                    ls[count].Add(item.SubItems[6].Text);
-                    ls[count].Add(item.SubItems[7].Text);
+                 *//*  lsv_danhsach_cauan.SelectedIndexChanged += lsv_danhsach_cauan_SelectedIndexChanged;
+                   if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+                   {
+                       // Xử lý lựa chọn dòng được chọn
+                       ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
+                       string name = selectedItem.SubItems[1].Text; // Lấy giá trị của cột
+                       txt_id.Text = name;
+                   }*//*
+                 foreach (ListViewItem item in lsv_danhsach_cauan.Items)
+                 {
+                     if (item.Checked)
+                     {
+                         ls.Add(new List<string>());
+                     }
 
-                    count++;
-                }
-            }
-            try
-            {
-                string filePath = "D:/file.docx";
-                using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
-                {
-                    // Add a main document part
-                    MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
-                    // Create a new document tree
+                 }
+                 foreach (ListViewItem item in lsv_danhsach_cauan.Items)
+                 {
+                     if (item.Checked)
+                     {
+                         ls[count].Add(item.SubItems[1].Text);
+                         ls[count].Add(item.SubItems[2].Text);
+                         ls[count].Add(item.SubItems[3].Text);
+                         ls[count].Add(item.SubItems[4].Text);
+                         ls[count].Add(item.SubItems[5].Text);
+                         ls[count].Add(item.SubItems[6].Text);
+                         ls[count].Add(item.SubItems[7].Text);
 
-                    mainPart.Document = new Document();
-                    // Create a body for the document
+                         count++;
+                     }
+                 }
+                 try
+                 {
+                     string filePath = "D:/file.docx";
+                     using (WordprocessingDocument wordDocument = WordprocessingDocument.Create(filePath, WordprocessingDocumentType.Document))
+                     {
+                         // Add a main document part
+                         MainDocumentPart mainPart = wordDocument.AddMainDocumentPart();
+                         // Create a new document tree
 
-                    DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
+                         mainPart.Document = new Document();
+                         // Create a body for the document
 
-                    // Add a paragraph to the body
-                    Paragraph paragraph = new Paragraph();
-                    Run run = new Run();
+                         DocumentFormat.OpenXml.Wordprocessing.Body body = new DocumentFormat.OpenXml.Wordprocessing.Body();
 
-                    foreach (List<string> sublist in ls)
-                    {
-                        foreach (string subitem in sublist)
-                        {
-                            run.Append(new Text(subitem + "\n"));
-                        }
-                        run.Append(new Break());
-                    }
-                    paragraph.Append(run);
-                    body.Append(paragraph);
+                         // Add a paragraph to the body
+                         Paragraph paragraph = new Paragraph();
+                         Run run = new Run();
 
-                    // Add the body to the document
-                    mainPart.Document.Append(body);
+                         foreach (List<string> sublist in ls)
+                         {
+                             foreach (string subitem in sublist)
+                             {
+                                 run.Append(new Text(subitem + "\n"));
+                             }
+                             run.Append(new Break());
+                         }
+                         paragraph.Append(run);
+                         body.Append(paragraph);
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                         // Add the body to the document
+                         mainPart.Document.Append(body);
 
-            }
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.ToString());
+
+                 }
 
 
-        }*/
-
+         }
+ */
         public class ChuBai1
         {
             public String Chubai { get; set; }
@@ -468,199 +449,184 @@ namespace VanPhap.View
             public String DiaChi { get; set; }
         }
 
+
         public void btn_print_Click(object sender, EventArgs e)
         {
-            
+            List<string> user = new List<string>();
             List<List<string>> ls = new List<List<string>>();
             int count = 0;
+
+
+            ChuBai1 chu = new ChuBai1();
+            {
+                chu.Chubai = txt_name.Text;
+                chu.Phapdanh = txt_nickname.Text;
+                chu.DiaChi = txt_diachi.Text;
+                chu.NguyenQuan = txt_nguyenquan.Text;
+            }
+
+
+
+            /*  lsv_danhsach_cauan.SelectedIndexChanged += lsv_danhsach_cauan_SelectedIndexChanged;
+              if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+              {
+                  // Xử lý lựa chọn dòng được chọn
+                  ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
+                  string name = selectedItem.SubItems[1].Text; // Lấy giá trị của cột
+                  txt_id.Text = name;
+              }*/
+
             foreach (ListViewItem item in lsv_danhsach_cauan.Items)
             {
                 if (item.Checked)
                 {
                     ls.Add(new List<string>());
-                    ls[count].Add(item.SubItems[1].Text);
-                    ls[count].Add(item.SubItems[2].Text);
-                    ls[count].Add(item.SubItems[3].Text);
-                    ls[count].Add(item.SubItems[4].Text);
-                    ls[count].Add(item.SubItems[5].Text);
-                    ls[count].Add(item.SubItems[6].Text);
-                    ls[count].Add(item.SubItems[7].Text);
-                    count++; 
                 }
+
             }
-            if(count > 0)
+            foreach (ListViewItem item in lsv_danhsach_cauan.Items)
             {
-                Application wordApp = new Application();
 
-                // Tạo một tài liệu mới
-                Document wordDoc = wordApp.Documents.Add();
-
-
-
-                // Thêm text vào tài liệu
-                PageSetup pageSetup = wordDoc.PageSetup;
-                pageSetup.LeftMargin = 20f; // 1 inch = 72 points
-                pageSetup.RightMargin = 20f;
-
-                Paragraph paragraph = wordDoc.Content.Paragraphs.Add();              
-                paragraph.Range.Text = "DÂNG LỄ CẦU AN";
-                paragraph.Range.Font.Size = 20;
-                paragraph.Range.Font.Bold = 1;
-                paragraph.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
-                paragraph.Range.InsertParagraphAfter();
-                /* Word.Range range1 = doc.Range(1, );
-
-
-                range1.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;*/
-                Paragraph paragraph1 = wordDoc.Content.Paragraphs.Add();
-                string name = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txt_name.Text);
-
-                float leftIndentInch = 1.5f;
-                float leftIndentPoints = leftIndentInch * 72;
-
-                paragraph1.Range.Text = "Chủ bái            : " + name;
-                paragraph1.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                paragraph1.Format.LeftIndent = leftIndentPoints;
-                paragraph1.Range.Font.Size = 12;
-                paragraph1.Range.Font.Bold = 1;
-                paragraph1.Range.InsertParagraphAfter();
-
-
-                Paragraph paragraph2 = wordDoc.Content.Paragraphs.Add();
-                paragraph2.Range.Text = "Pháp danh      : "+ txt_nickname.Text;
-                paragraph2.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                paragraph2.Range.Font.Size = 12;
-                paragraph2.Range.Font.Bold = 1;
-                paragraph2.Range.InsertParagraphAfter();
-
-
-                Paragraph paragraph3 = wordDoc.Content.Paragraphs.Add();
-                paragraph3.Range.Text = "Địa chỉ             : "+ txt_diachi.Text;
-                paragraph3.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                paragraph3.Range.Font.Size = 12;
-                paragraph3.Range.Font.Bold = 1;
-                paragraph3.Range.InsertParagraphAfter();
-
-
-                Paragraph paragraph4 = wordDoc.Content.Paragraphs.Add();
-                paragraph4.Range.Text = "Nguyên quán : "+ txt_nguyenquan.Text;
-                paragraph4.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                paragraph4.Range.Font.Size = 12;
-                paragraph4.Range.Font.Bold = 1;
-                paragraph4.Range.InsertParagraphAfter();
-
-
-                Paragraph paragraph6 = wordDoc.Content.Paragraphs.Add();
-                paragraph6.Range.Text = "";
-                paragraph6.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
-                paragraph6.Range.Font.Size = 12;
-                paragraph6.Range.Font.Bold = 0;
-                paragraph6.Range.InsertParagraphAfter();
-
-
-                Paragraph paragraph5 = wordDoc.Content.Paragraphs.Add();
-                Table table = wordDoc.Tables.Add(paragraph5.Range, count + 1, 8);
-                table.Borders.InsideLineStyle = WdLineStyle.wdLineStyleSingle;
-                table.Borders.OutsideLineStyle = WdLineStyle.wdLineStyleSingle;
-
-                table.Columns[1].Width = 40f;
-                table.Columns[2].Width = 40f;
-                table.Columns[3].Width = 150f;
-                table.Columns[5].Width = 65f;
-                table.Columns[6].Width = 65f;
-                table.Columns[7].Width = 70f;
-                table.Columns[8].Width = 65f;
-
-                table.Rows.Height = 2f;
-
-                table.Cell(1, 1).Range.Text = "Nam";
-                table.Cell(1, 2).Range.Text = "Nữ";
-                table.Cell(1, 3).Range.Text = "Họ tên";
-                table.Cell(1, 4).Range.Text = "Pháp danh";
-                table.Cell(1, 5).Range.Text = "Năm sinh";
-                table.Cell(1, 6).Range.Text = "Tuổi";
-                table.Cell(1, 7).Range.Text = "Sao";
-                table.Cell(1, 8).Range.Text = "Hạn";
-                paragraph5.Range.Font.Bold = 0;
-                paragraph5.Range.Font.Size = 14;
-                for (int i = 2; i <= count + 1; i++)
+                if (item.Checked)
                 {
-                    if (ls[i - 2][2].Equals("1"))
+                    string kiemTra = item.SubItems[3].Text;//gioi tinh
+                    if (kiemTra.Equals("1"))
                     {
-                        table.Cell(i, 1).Range.Text = "X";
-                        table.Cell(i, 2).Range.Text = "";
-
-                        Cell namerow =  table.Cell(i, 3);
-                        namerow.Range.Text = ls[i - 2][0];
-                        namerow.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                        namerow.Range.Cells.VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-
-                        table.Cell(i, 4).Range.Text = ls[i - 2][1];
-                        table.Cell(i, 5).Range.Text = ls[i - 2][3];
-                        table.Cell(i, 6).Range.Text = ls[i - 2][4];
-                        table.Cell(i, 7).Range.Text = ls[i - 2][5];
-                        table.Cell(i, 8).Range.Text = ls[i - 2][6];
-
+                        ls[count].Add("X");
+                        ls[count].Add("");
+                        ls[count].Add(item.SubItems[1].Text); //name
+                        ls[count].Add(item.SubItems[2].Text); // phapdanh
+                        ls[count].Add(item.SubItems[4].Text);//nam sinh
+                        ls[count].Add(item.SubItems[5].Text);//tuoi
+                        ls[count].Add(item.SubItems[6].Text);//sao
+                        ls[count].Add(item.SubItems[7].Text);//han
                     }
                     else
                     {
-                        table.Cell(i, 1).Range.Text = "";
-                        table.Cell(i, 2).Range.Text = "X";
+                        ls[count].Add("");
+                        ls[count].Add("X");
+                        ls[count].Add(item.SubItems[1].Text); //name
+                        ls[count].Add(item.SubItems[2].Text); // phapdanh
+                        ls[count].Add(item.SubItems[4].Text);//nam sinh
+                        ls[count].Add(item.SubItems[5].Text);//tuoi
+                        ls[count].Add(item.SubItems[6].Text);//sao
+                        ls[count].Add(item.SubItems[7].Text);//han
+                    }
 
-                        Cell namerow = table.Cell(i, 3);
-                        namerow.Range.Text = ls[i - 2][0];
-                        namerow.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
-                        namerow.Range.Cells.VerticalAlignment = WdCellVerticalAlignment.wdCellAlignVerticalCenter;
 
-                        table.Cell(i, 4).Range.Text = ls[i - 2][1];
-                        table.Cell(i, 5).Range.Text = ls[i - 2][3];
-                        table.Cell(i, 6).Range.Text = ls[i - 2][4];
-                        table.Cell(i, 7).Range.Text = ls[i - 2][5];
-                        table.Cell(i, 8).Range.Text = ls[i - 2][6];
+
+                    count++;
+                }
+            }
+
+            try
+            {
+                // tạo tệp mới
+                string path = @"C:\Git\VanPhap\VanPhap\test\test.html";
+                File.Create(path).Close();
+                using (StreamWriter sw = new StreamWriter(path))
+                {
+                    sw.WriteLine("<html><head><title>So cau an</title></head>");
+                    sw.WriteLine("<body>");
+                    sw.WriteLine("<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"1000\">");
+                    sw.WriteLine("<tbody><tr>");
+                    sw.WriteLine("<td width=\"998\" colspan=\"3\" height=\"60\">");
+                    sw.WriteLine("<p align=\"center\"><b><font size=\"5\" face=\"VNI-Cooper\">DAÂNG LEÃ CAÀU AN</font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr>");
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td width=\"265\"></td>");
+                    sw.WriteLine("<td width=\"124\">");
+                    sw.WriteLine("<p style=\"line-height: 150%; margin-bottom: 0\"><b><font size=\"3\" face=\"vni-times\"><i>Chuû baùi&nbsp;</i></font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("<td width=\"605\">");
+                    sw.WriteLine("<p style=\"line-height: 100%; margin-bottom: 0\"><b>: " + chu.Chubai + "");
+                    sw.WriteLine("<font face=\"VNI-Times\" size=\"2\"><span style=\"text-transform: uppercase\">");
+                    sw.WriteLine("</span></font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr>");
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td width=\"265\"></td>");
+                    sw.WriteLine("<td width=\"124\">");
+                    sw.WriteLine("<p style=\"line-height: 150%; margin-bottom: 0\"><b><font size=\"3\" face=\"vni-times\"><i>Phaùp danh&nbsp;</i></font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("<td width=\"605\"><p style=\"line-height: 100%; margin-bottom: 0\"><b>: " + chu.Phapdanh + "");
+                    sw.WriteLine("</b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr>");
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td width=\"265\"></td>");
+                    sw.WriteLine("<td width=\"124\">");
+                    sw.WriteLine("<p style=\"line-height: 150%; margin-bottom: 0\"><b><font size=\"3\" face=\"vni-times\"><i>Nguyeân quaùn</i></font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("<td width=\"605\">");
+                    sw.WriteLine("<p style=\"line-height: 100%; margin-bottom: 0\"><b>: " + chu.NguyenQuan + "");
+                    sw.WriteLine("</b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr>");
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td width=\"265\"></td>");
+                    sw.WriteLine("<td width=\"124\">");
+                    sw.WriteLine("<p style=\"line-height: 150%; margin-bottom: 0\"><b><font size=\"3\" face=\"vni-times\"><i>Ñòa chæ</i></font></b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("<td width=\"605\">");
+                    sw.WriteLine("<p style=\"line - height: 100 %; margin - bottom: 0\"><b>: " + chu.DiaChi + "");
+                    sw.WriteLine("</b></p>");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr>");
+                    sw.WriteLine("<tr>");
+                    sw.WriteLine("<td width=\"265\"><b><font size=\"3\" face=\"vni-times\"><i>&nbsp;</i></font></b></td>");
+                    sw.WriteLine("<td width=\"124\">");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("<td width=\"605\">");
+                    sw.WriteLine("</td>");
+                    sw.WriteLine("</tr></tbody></table>");
+                    sw.WriteLine("<table border=\".1\" width=\"1000\" cellspacing=\"0\" bordercolor=\"#808080\" bordercolorlight=\"#808080\" bordercolordark=\"#FFFFFF\" cellpadding=\"0\" height=\"62\">");
+                    sw.WriteLine("<tbody><tr>");
+                    sw.WriteLine("<td width=\"60\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">NAM</font></b></td>");
+                    sw.WriteLine("<td width=\"60\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">NÖÕ</font></b></td>");
+                    sw.WriteLine("<td width=\"350\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">HOÏ VAØ TEÂN</font></b></td>");
+                    sw.WriteLine("<td width=\"150\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">PHAÙP DANH</font></b></td>");
+                    sw.WriteLine("<td width=\"150\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">NAÊM SINH</font></b></td>");
+                    sw.WriteLine("<td width=\"100\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">TUOÅI</font></b></td>");
+                    sw.WriteLine("<td width=\"130\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">SAO</font></b></td>");
+                    sw.WriteLine("<td width=\"130\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">HẠN</font></b></td>");
+                    sw.WriteLine("</tr>");
+                    //Dữ liệu thêm vào
+                    foreach (List<string> sublist in ls)
+                    {
+                        sw.WriteLine("<tr>");
+                        foreach (string subitem in sublist)
+                        {
+
+                            sw.WriteLine("<td width=\"130\" align=\"center\" height=\"39\"><b>" + subitem + "</b></td>"); //name //nam//nu
+
+
+                        }
+                        sw.WriteLine("</tr>");
+
 
                     }
-                }
-                
-                paragraph5.Range.InsertParagraphAfter();
-                wordDoc.SaveAs(@"D:\example.docx");
 
-                wordDoc.Close();
-                wordApp.Quit();
-                Process.Start(@"D:\example.docx");
-            }    
-            else
+
+
+                    sw.WriteLine("</body></html>");
+
+
+
+                }
+                Process.Start("C:\\Git\\test.html");
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Hãy chọn người cầu an");
+                MessageBox.Show(ex.ToString());
+
             }
 
-        }
-            private void button1_Click_1(object sender, EventArgs e)
-            {
-                if (txt_name.Text.Equals(""))
-                {
-                    MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
-                }
-                else
-                {
-                    FormUpdateChuBai frm = new FormUpdateChuBai();
 
-                    frm.idso = txt_idchubai.Text;
-                    frm.phapdanh = txt_nickname.Text;
-                    frm.name = txt_name.Text;
-                    frm.diachi = txt_diachi.Text;
-                    frm.nguyenquan = txt_nguyenquan.Text;
-                    frm.gioitinh = txt_gioi_tinh.Text;
-                    frm.Show();
-                }
-            }
-          
-        private void button2_Click(object sender, EventArgs e)
-        {
-            txt_loaiso.Text = loaiso;
         }
 
-
-        private void button1_Click_2(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             if (txt_name.Text.Equals(""))
             {
@@ -668,17 +634,36 @@ namespace VanPhap.View
             }
             else
             {
-                FormUpdateChuBai frm = new FormUpdateChuBai();
+                //FormUpdateChuBai frm = new FormUpdateChuBai();
 
-                frm.idso = txt_idchubai.Text;
-                frm.phapdanh = txt_nickname.Text;
-                frm.name = txt_name.Text;
-                frm.diachi = txt_diachi.Text;
-                frm.nguyenquan = txt_nguyenquan.Text;
-                frm.gioitinh = txt_gioi_tinh.Text;
-                frm.loaiso = txt_loaiso.Text;
-                frm.Show();
+                //frm.idso = txt_idchubai.Text;
+                //frm.name = txt_name.Text;
+                //frm.diachi = txt_diachi.Text;
+                //frm.nguyenquan = txt_nguyenquan.Text;
+                //frm.gioitinh = txt_gioi_tinh.Text;
+                //frm.Show();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            txt_loaiso.Text = loaiso;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TimChuBai tcb = new TimChuBai();
+            tcb.Show();
+        }
+
+        private void btn_ThemSo_Click(object sender, EventArgs e)
+        {
+            ChuBai cb = new ChuBai();
+            cb.Show();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
 
         }
     }

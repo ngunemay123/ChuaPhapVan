@@ -17,7 +17,7 @@ namespace VanPhap.View
     {
         private Form activeForm;
 
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\oppp\\cuongvanphap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -175,7 +175,7 @@ namespace VanPhap.View
                     string diachi = reader.GetString(3);
                     string nguyenquan = reader.GetString(4);
 
-                    txt_id_chu_bai.Text = idSo.ToString();
+                    //txt_id_chu_bai.Text = idSo.ToString();
                     ListViewItem lvi = new ListViewItem(idSo.ToString());
                     lvi.SubItems.Add(hoten);
                     lvi.SubItems.Add(phapdanh);
@@ -226,7 +226,7 @@ namespace VanPhap.View
                         string diachi = reader.GetString(3);
                         string nguyenquan = reader.GetString(4);
 
-                        txt_id_chu_bai.Text = idSo.ToString();
+                        //txt_id_chu_bai.Text = idSo.ToString();
                         ListViewItem lvi = new ListViewItem(idSo.ToString());
                         lvi.SubItems.Add(hoten);
                         lvi.SubItems.Add(phapdanh);
@@ -269,7 +269,7 @@ namespace VanPhap.View
                 string nguyenquan = activatedItem.SubItems[4].Text;
 
                 /*SoCauAn form2 = new SoCauAn();
-                form2.id = id;
+                form2.id = id; 
                 form2.chubai = chubai;
                 form2.phapdanh = phapdanh;
                 form2.diachi = diachi;

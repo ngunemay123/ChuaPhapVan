@@ -53,8 +53,6 @@
             this.pnl_Logo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnl_buttom = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.pnl_Component = new System.Windows.Forms.Panel();
@@ -212,7 +210,7 @@
             this.pnl_Menu.Controls.Add(this.pnl_Logo);
             this.pnl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Menu.Location = new System.Drawing.Point(0, 27);
-            this.pnl_Menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Menu.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Menu.Name = "pnl_Menu";
             this.pnl_Menu.Size = new System.Drawing.Size(204, 696);
             this.pnl_Menu.TabIndex = 31;
@@ -225,7 +223,7 @@
             this.btn_SoCauSieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SoCauSieu.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SoCauSieu.Location = new System.Drawing.Point(0, 147);
-            this.btn_SoCauSieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_SoCauSieu.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SoCauSieu.Name = "btn_SoCauSieu";
             this.btn_SoCauSieu.Size = new System.Drawing.Size(204, 49);
             this.btn_SoCauSieu.TabIndex = 34;
@@ -241,7 +239,7 @@
             this.btn_SoCauAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_SoCauAn.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SoCauAn.Location = new System.Drawing.Point(0, 98);
-            this.btn_SoCauAn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_SoCauAn.Margin = new System.Windows.Forms.Padding(2);
             this.btn_SoCauAn.Name = "btn_SoCauAn";
             this.btn_SoCauAn.Size = new System.Drawing.Size(204, 49);
             this.btn_SoCauAn.TabIndex = 33;
@@ -255,7 +253,7 @@
             this.pnl_Logo.Controls.Add(this.label2);
             this.pnl_Logo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_Logo.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Logo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Logo.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Logo.Name = "pnl_Logo";
             this.pnl_Logo.Size = new System.Drawing.Size(204, 98);
             this.pnl_Logo.TabIndex = 0;
@@ -281,35 +279,15 @@
             this.imageList2.Images.SetKeyName(1, "4791023_buddha_building_china_landmark_pagoda_icon (1).png");
             this.imageList2.Images.SetKeyName(2, "pagoda_128_icon.png");
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1239, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 696);
-            this.panel1.TabIndex = 35;
-            // 
-            // pnl_buttom
-            // 
-            this.pnl_buttom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(228)))), ((int)(((byte)(226)))));
-            this.pnl_buttom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_buttom.Location = new System.Drawing.Point(204, 644);
-            this.pnl_buttom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pnl_buttom.Name = "pnl_buttom";
-            this.pnl_buttom.Size = new System.Drawing.Size(1035, 79);
-            this.pnl_buttom.TabIndex = 36;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(228)))), ((int)(((byte)(226)))));
             this.panel3.Controls.Add(this.lbl_Title);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(204, 27);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1035, 98);
+            this.panel3.Size = new System.Drawing.Size(1239, 98);
             this.panel3.TabIndex = 37;
             // 
             // lbl_Title
@@ -317,7 +295,7 @@
             this.lbl_Title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(439, 34);
+            this.lbl_Title.Location = new System.Drawing.Point(541, 34);
             this.lbl_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(134, 32);
@@ -329,9 +307,9 @@
             this.pnl_Component.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Component.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Component.Location = new System.Drawing.Point(204, 125);
-            this.pnl_Component.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_Component.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_Component.Name = "pnl_Component";
-            this.pnl_Component.Size = new System.Drawing.Size(1035, 519);
+            this.pnl_Component.Size = new System.Drawing.Size(1239, 598);
             this.pnl_Component.TabIndex = 38;
             // 
             // form_manage
@@ -342,8 +320,6 @@
             this.ClientSize = new System.Drawing.Size(1443, 723);
             this.Controls.Add(this.pnl_Component);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pnl_buttom);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_Menu);
             this.Controls.Add(this.Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -388,8 +364,6 @@
         private System.Windows.Forms.ToolStripMenuItem tùyChọnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnl_buttom;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lbl_Title;
         private System.Windows.Forms.Panel pnl_Component;

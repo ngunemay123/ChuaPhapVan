@@ -285,8 +285,7 @@ namespace VanPhap
 
         private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePassword tk = new ChangePassword();
-            tk.Show();
+
         }
 
         private void label2_Click_1(object sender, EventArgs e)
@@ -296,8 +295,7 @@ namespace VanPhap
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePassword c = new ChangePassword();
-            c.Show();
+            
         }
 
         private void pnl_title_Paint(object sender, PaintEventArgs e)

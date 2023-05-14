@@ -34,6 +34,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_id = new System.Windows.Forms.TextBox();
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_tuoiii = new System.Windows.Forms.TextBox();
             this.txt_NamMat = new System.Windows.Forms.TextBox();
             this.lbl_NamMat = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
@@ -55,7 +56,6 @@
             this.rbm_Nu = new System.Windows.Forms.RadioButton();
             this.btn_xacnhan = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
-            this.txt_tuoiii = new System.Windows.Forms.TextBox();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +130,18 @@
             this.pnl_Form.Size = new System.Drawing.Size(845, 282);
             this.pnl_Form.TabIndex = 69;
             // 
+            // txt_tuoiii
+            // 
+            this.txt_tuoiii.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_tuoiii.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tuoiii.Location = new System.Drawing.Point(455, 174);
+            this.txt_tuoiii.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_tuoiii.Name = "txt_tuoiii";
+            this.txt_tuoiii.Size = new System.Drawing.Size(12, 42);
+            this.txt_tuoiii.TabIndex = 39;
+            this.txt_tuoiii.TabStop = false;
+            this.txt_tuoiii.Visible = false;
+            // 
             // txt_NamMat
             // 
             this.txt_NamMat.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -138,7 +150,7 @@
             this.txt_NamMat.Margin = new System.Windows.Forms.Padding(4);
             this.txt_NamMat.Name = "txt_NamMat";
             this.txt_NamMat.Size = new System.Drawing.Size(269, 42);
-            this.txt_NamMat.TabIndex = 37;
+            this.txt_NamMat.TabIndex = 4;
             // 
             // lbl_NamMat
             // 
@@ -170,10 +182,8 @@
             this.txt_sao.Location = new System.Drawing.Point(555, 65);
             this.txt_sao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sao.Name = "txt_sao";
-            this.txt_sao.ReadOnly = true;
             this.txt_sao.Size = new System.Drawing.Size(269, 42);
-            this.txt_sao.TabIndex = 0;
-            this.txt_sao.TabStop = false;
+            this.txt_sao.TabIndex = 6;
             // 
             // bl_Han
             // 
@@ -260,10 +270,8 @@
             this.txt_han.Location = new System.Drawing.Point(555, 116);
             this.txt_han.Margin = new System.Windows.Forms.Padding(4);
             this.txt_han.Name = "txt_han";
-            this.txt_han.ReadOnly = true;
             this.txt_han.Size = new System.Drawing.Size(269, 42);
-            this.txt_han.TabIndex = 0;
-            this.txt_han.TabStop = false;
+            this.txt_han.TabIndex = 7;
             // 
             // txt_birthday
             // 
@@ -283,10 +291,8 @@
             this.txt_tuoi.Location = new System.Drawing.Point(555, 15);
             this.txt_tuoi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_tuoi.Name = "txt_tuoi";
-            this.txt_tuoi.ReadOnly = true;
             this.txt_tuoi.Size = new System.Drawing.Size(269, 42);
-            this.txt_tuoi.TabIndex = 1;
-            this.txt_tuoi.TabStop = false;
+            this.txt_tuoi.TabIndex = 5;
             // 
             // txt_nickname
             // 
@@ -363,6 +369,7 @@
             this.rbm_Nu.Name = "rbm_Nu";
             this.rbm_Nu.Size = new System.Drawing.Size(74, 38);
             this.rbm_Nu.TabIndex = 24;
+            this.rbm_Nu.TabStop = true;
             this.rbm_Nu.Text = "Nữ";
             this.rbm_Nu.UseVisualStyleBackColor = true;
             // 
@@ -379,7 +386,7 @@
             this.btn_xacnhan.Name = "btn_xacnhan";
             this.btn_xacnhan.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_xacnhan.Size = new System.Drawing.Size(175, 49);
-            this.btn_xacnhan.TabIndex = 67;
+            this.btn_xacnhan.TabIndex = 8;
             this.btn_xacnhan.Text = "Xác nhận";
             this.btn_xacnhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xacnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -399,24 +406,12 @@
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
             this.btn_Add.Size = new System.Drawing.Size(173, 49);
-            this.btn_Add.TabIndex = 68;
+            this.btn_Add.TabIndex = 9;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // txt_tuoiii
-            // 
-            this.txt_tuoiii.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_tuoiii.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tuoiii.Location = new System.Drawing.Point(455, 174);
-            this.txt_tuoiii.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_tuoiii.Name = "txt_tuoiii";
-            this.txt_tuoiii.Size = new System.Drawing.Size(12, 42);
-            this.txt_tuoiii.TabIndex = 39;
-            this.txt_tuoiii.TabStop = false;
-            this.txt_tuoiii.Visible = false;
             // 
             // NguoiNhanCauSieu
             // 

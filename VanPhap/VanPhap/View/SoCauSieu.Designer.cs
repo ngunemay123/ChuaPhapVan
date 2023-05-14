@@ -64,15 +64,15 @@
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDSo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
-            this.rdbtn_chua = new System.Windows.Forms.RadioButton();
             this.lbl_List = new System.Windows.Forms.Label();
-            this.rdbtn_coso = new System.Windows.Forms.RadioButton();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_lammoi = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.pnl_Form.SuspendLayout();
             this.pnl_List.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +119,7 @@
             // 
             // txt_idchubai
             // 
-            this.txt_idchubai.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_idchubai.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_idchubai.Location = new System.Drawing.Point(1005, 160);
             this.txt_idchubai.Margin = new System.Windows.Forms.Padding(4);
@@ -130,7 +130,7 @@
             // 
             // txt_id
             // 
-            this.txt_id.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_id.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_id.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(813, 160);
             this.txt_id.Margin = new System.Windows.Forms.Padding(4);
@@ -143,7 +143,7 @@
             // 
             // txt_gioi_tinh
             // 
-            this.txt_gioi_tinh.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_gioi_tinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_gioi_tinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_gioi_tinh.Location = new System.Drawing.Point(221, 153);
             this.txt_gioi_tinh.Margin = new System.Windows.Forms.Padding(4);
@@ -178,13 +178,12 @@
             this.pnl_Form.Location = new System.Drawing.Point(15, 69);
             this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
-            this.pnl_Form.Size = new System.Drawing.Size(1199, 169);
+            this.pnl_Form.Size = new System.Drawing.Size(1199, 232);
             this.pnl_Form.TabIndex = 113;
-            this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
             // 
             // txt_loaiso
             // 
-            this.txt_loaiso.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_loaiso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_loaiso.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_loaiso.Location = new System.Drawing.Point(588, 160);
             this.txt_loaiso.Margin = new System.Windows.Forms.Padding(4);
@@ -232,7 +231,7 @@
             // 
             // rbm_Woman
             // 
-            this.rbm_Woman.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbm_Woman.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbm_Woman.AutoSize = true;
             this.rbm_Woman.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbm_Woman.Location = new System.Drawing.Point(428, 160);
@@ -246,7 +245,7 @@
             // 
             // rbm_Man
             // 
-            this.rbm_Man.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rbm_Man.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbm_Man.AutoSize = true;
             this.rbm_Man.Checked = true;
             this.rbm_Man.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -287,7 +286,7 @@
             // 
             // lbl_sex
             // 
-            this.lbl_sex.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbl_sex.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_sex.AutoSize = true;
             this.lbl_sex.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_sex.Location = new System.Drawing.Point(27, 158);
@@ -296,7 +295,6 @@
             this.lbl_sex.Size = new System.Drawing.Size(121, 34);
             this.lbl_sex.TabIndex = 5;
             this.lbl_sex.Text = "Giới tính";
-            this.lbl_sex.Visible = false;
             // 
             // lbl_diachi
             // 
@@ -356,10 +354,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_List.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_List.Controls.Add(this.lsv_danhsach_causieu);
-            this.pnl_List.Location = new System.Drawing.Point(15, 302);
+            this.pnl_List.Location = new System.Drawing.Point(13, 369);
             this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_List.Name = "pnl_List";
-            this.pnl_List.Size = new System.Drawing.Size(1199, 512);
+            this.pnl_List.Size = new System.Drawing.Size(1199, 444);
             this.pnl_List.TabIndex = 115;
             // 
             // lsv_danhsach_causieu
@@ -389,7 +387,7 @@
             this.lsv_danhsach_causieu.Location = new System.Drawing.Point(0, 0);
             this.lsv_danhsach_causieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsv_danhsach_causieu.Name = "lsv_danhsach_causieu";
-            this.lsv_danhsach_causieu.Size = new System.Drawing.Size(1199, 512);
+            this.lsv_danhsach_causieu.Size = new System.Drawing.Size(1199, 444);
             this.lsv_danhsach_causieu.TabIndex = 103;
             this.lsv_danhsach_causieu.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_causieu.View = System.Windows.Forms.View.Details;
@@ -467,47 +465,16 @@
             this.imageList3.Images.SetKeyName(5, "Pencil-icon.png");
             this.imageList3.Images.SetKeyName(6, "search-icon.png");
             // 
-            // rdbtn_chua
-            // 
-            this.rdbtn_chua.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtn_chua.AutoSize = true;
-            this.rdbtn_chua.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_chua.Location = new System.Drawing.Point(1018, 16);
-            this.rdbtn_chua.Margin = new System.Windows.Forms.Padding(4);
-            this.rdbtn_chua.Name = "rdbtn_chua";
-            this.rdbtn_chua.Size = new System.Drawing.Size(187, 40);
-            this.rdbtn_chua.TabIndex = 117;
-            this.rdbtn_chua.Text = "Chưa có sổ";
-            this.rdbtn_chua.UseVisualStyleBackColor = true;
-            this.rdbtn_chua.CheckedChanged += new System.EventHandler(this.rdbtn_chua_CheckedChanged);
-            this.rdbtn_chua.Click += new System.EventHandler(this.rdbtn_chua_Click);
-            // 
             // lbl_List
             // 
             this.lbl_List.AutoSize = true;
             this.lbl_List.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_List.Location = new System.Drawing.Point(24, 255);
+            this.lbl_List.Location = new System.Drawing.Point(23, 316);
             this.lbl_List.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_List.Name = "lbl_List";
             this.lbl_List.Size = new System.Drawing.Size(471, 38);
             this.lbl_List.TabIndex = 116;
             this.lbl_List.Text = "Danh sách người nhận cầu siêu";
-            // 
-            // rdbtn_coso
-            // 
-            this.rdbtn_coso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbtn_coso.AutoSize = true;
-            this.rdbtn_coso.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtn_coso.Location = new System.Drawing.Point(874, 16);
-            this.rdbtn_coso.Margin = new System.Windows.Forms.Padding(4);
-            this.rdbtn_coso.Name = "rdbtn_coso";
-            this.rdbtn_coso.Size = new System.Drawing.Size(114, 40);
-            this.rdbtn_coso.TabIndex = 118;
-            this.rdbtn_coso.Text = "Có sổ";
-            this.rdbtn_coso.UseVisualStyleBackColor = true;
-            this.rdbtn_coso.Click += new System.EventHandler(this.rdbtn_coso_Click);
             // 
             // btn_Add
             // 
@@ -516,11 +483,11 @@
             this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ImageKey = "add-icon.png";
             this.btn_Add.ImageList = this.imageList2;
-            this.btn_Add.Location = new System.Drawing.Point(1226, 303);
+            this.btn_Add.Location = new System.Drawing.Point(1228, 369);
             this.btn_Add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_Add.Size = new System.Drawing.Size(180, 49);
+            this.btn_Add.Size = new System.Drawing.Size(173, 49);
             this.btn_Add.TabIndex = 110;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -534,11 +501,11 @@
             this.btn_lammoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lammoi.ImageIndex = 7;
             this.btn_lammoi.ImageList = this.imageList2;
-            this.btn_lammoi.Location = new System.Drawing.Point(1226, 138);
+            this.btn_lammoi.Location = new System.Drawing.Point(1228, 243);
             this.btn_lammoi.Margin = new System.Windows.Forms.Padding(0);
             this.btn_lammoi.Name = "btn_lammoi";
             this.btn_lammoi.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btn_lammoi.Size = new System.Drawing.Size(180, 49);
+            this.btn_lammoi.Size = new System.Drawing.Size(173, 49);
             this.btn_lammoi.TabIndex = 109;
             this.btn_lammoi.Text = "Làm mới";
             this.btn_lammoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -551,11 +518,11 @@
             this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ImageIndex = 8;
             this.btn_Delete.ImageList = this.imageList2;
-            this.btn_Delete.Location = new System.Drawing.Point(1226, 444);
+            this.btn_Delete.Location = new System.Drawing.Point(1228, 510);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_Delete.Size = new System.Drawing.Size(180, 49);
+            this.btn_Delete.Size = new System.Drawing.Size(173, 49);
             this.btn_Delete.TabIndex = 112;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -568,11 +535,11 @@
             this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.ImageIndex = 3;
             this.btn_Update.ImageList = this.imageList2;
-            this.btn_Update.Location = new System.Drawing.Point(1226, 373);
+            this.btn_Update.Location = new System.Drawing.Point(1228, 439);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_Update.Size = new System.Drawing.Size(180, 49);
+            this.btn_Update.Size = new System.Drawing.Size(173, 49);
             this.btn_Update.TabIndex = 111;
             this.btn_Update.Text = "Sửa";
             this.btn_Update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -588,11 +555,11 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageIndex = 3;
             this.button1.ImageList = this.imageList2;
-            this.button1.Location = new System.Drawing.Point(1226, 69);
+            this.button1.Location = new System.Drawing.Point(1229, 185);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(180, 49);
+            this.button1.Size = new System.Drawing.Size(173, 49);
             this.button1.TabIndex = 120;
             this.button1.Text = "Sửa";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -606,22 +573,60 @@
             this.btn_print.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ImageIndex = 10;
             this.btn_print.ImageList = this.imageList2;
-            this.btn_print.Location = new System.Drawing.Point(1226, 511);
+            this.btn_print.Location = new System.Drawing.Point(1228, 577);
             this.btn_print.Margin = new System.Windows.Forms.Padding(0);
             this.btn_print.Name = "btn_print";
             this.btn_print.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btn_print.Size = new System.Drawing.Size(180, 49);
+            this.btn_print.Size = new System.Drawing.Size(173, 49);
             this.btn_print.TabIndex = 119;
             this.btn_print.Text = "In sớ";
             this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_print.UseVisualStyleBackColor = true;
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ImageIndex = 4;
+            this.button2.ImageList = this.imageList2;
+            this.button2.Location = new System.Drawing.Point(1228, 127);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(173, 49);
+            this.button2.TabIndex = 121;
+            this.button2.Text = "Tìm sổ";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.FlatAppearance.BorderSize = 2;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ImageIndex = 0;
+            this.button3.ImageList = this.imageList2;
+            this.button3.Location = new System.Drawing.Point(1228, 69);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(173, 49);
+            this.button3.TabIndex = 122;
+            this.button3.Text = "Thêm sổ";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // SoCauSieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1415, 830);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.pnl_Form);
             this.Controls.Add(this.btn_lammoi);
@@ -631,9 +636,7 @@
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.lbl_PhieuDiemThongTin);
             this.Controls.Add(this.pnl_List);
-            this.Controls.Add(this.rdbtn_chua);
             this.Controls.Add(this.lbl_List);
-            this.Controls.Add(this.rdbtn_coso);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Text = "SoCauSieu";
@@ -685,10 +688,10 @@
         protected System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader IDSo;
         private System.Windows.Forms.ImageList imageList3;
-        private System.Windows.Forms.RadioButton rdbtn_chua;
         private System.Windows.Forms.Label lbl_List;
-        private System.Windows.Forms.RadioButton rdbtn_coso;
         private System.Windows.Forms.ColumnHeader NamMat;
         private System.Windows.Forms.TextBox txt_loaiso;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

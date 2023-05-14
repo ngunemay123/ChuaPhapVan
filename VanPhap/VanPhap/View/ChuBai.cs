@@ -16,7 +16,7 @@ namespace VanPhap.View
 {
     public partial class ChuBai : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\Github\\oppp\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -137,7 +137,6 @@ namespace VanPhap.View
                             if (rowsAffected > 0)
                             {
                                 MessageBox.Show("Dữ liệu đã được thêm thành công vào cơ sở dữ liệu.");
-                                this.Close();
                             }
                             else
                             {
@@ -162,6 +161,21 @@ namespace VanPhap.View
         private void pnl_Form_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_NamSinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_NamSinh_KeyDown(object sender, KeyEventArgs e)
+        {
+            
         }
     }
     }
