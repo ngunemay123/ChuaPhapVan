@@ -34,14 +34,12 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnl_List = new System.Windows.Forms.Panel();
             this.lsv_danhsach_cauan = new System.Windows.Forms.ListView();
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,7 +63,6 @@
             this.lbl_nguyenquan = new System.Windows.Forms.Label();
             this.btn_ThemSo = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.txt_gioi_tinh = new System.Windows.Forms.TextBox();
             this.pnl_List.SuspendLayout();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
@@ -121,14 +118,12 @@
             this.lsv_danhsach_cauan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lsv_danhsach_cauan.CheckBoxes = true;
             this.lsv_danhsach_cauan.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader10,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7,
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader11});
@@ -137,18 +132,13 @@
             this.lsv_danhsach_cauan.GridLines = true;
             this.lsv_danhsach_cauan.HideSelection = false;
             this.lsv_danhsach_cauan.Location = new System.Drawing.Point(0, 0);
-            this.lsv_danhsach_cauan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsv_danhsach_cauan.Margin = new System.Windows.Forms.Padding(2);
             this.lsv_danhsach_cauan.Name = "lsv_danhsach_cauan";
             this.lsv_danhsach_cauan.Size = new System.Drawing.Size(910, 288);
             this.lsv_danhsach_cauan.TabIndex = 103;
             this.lsv_danhsach_cauan.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_cauan.View = System.Windows.Forms.View.Details;
             this.lsv_danhsach_cauan.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Check";
-            this.columnHeader10.Width = 101;
             // 
             // columnHeader1
             // 
@@ -175,21 +165,15 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Âm lịch";
+            this.columnHeader5.Text = "Tuổi";
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 150;
+            this.columnHeader5.Width = 120;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Sao";
             this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader6.Width = 150;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Hạn";
-            this.columnHeader7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader7.Width = 150;
             // 
             // columnHeader8
             // 
@@ -357,9 +341,9 @@
             // txt_id
             // 
             this.txt_id.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(1009, 238);
+            this.txt_id.Location = new System.Drawing.Point(932, 197);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(54, 35);
+            this.txt_id.Size = new System.Drawing.Size(96, 35);
             this.txt_id.TabIndex = 30;
             this.txt_id.TabStop = false;
             this.txt_id.Text = " ";
@@ -367,19 +351,19 @@
             // txt_idchubai
             // 
             this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idchubai.Location = new System.Drawing.Point(927, 238);
+            this.txt_idchubai.Location = new System.Drawing.Point(932, 238);
             this.txt_idchubai.Name = "txt_idchubai";
-            this.txt_idchubai.Size = new System.Drawing.Size(72, 35);
+            this.txt_idchubai.Size = new System.Drawing.Size(96, 35);
             this.txt_idchubai.TabIndex = 31;
             this.txt_idchubai.TabStop = false;
             // 
             // txt_loaiso
             // 
             this.txt_loaiso.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_loaiso.Location = new System.Drawing.Point(927, 197);
+            this.txt_loaiso.Location = new System.Drawing.Point(932, 151);
             this.txt_loaiso.Name = "txt_loaiso";
             this.txt_loaiso.ReadOnly = true;
-            this.txt_loaiso.Size = new System.Drawing.Size(72, 35);
+            this.txt_loaiso.Size = new System.Drawing.Size(96, 35);
             this.txt_loaiso.TabIndex = 101;
             this.txt_loaiso.TabStop = false;
             // 
@@ -486,17 +470,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // txt_gioi_tinh
-            // 
-            this.txt_gioi_tinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gioi_tinh.Location = new System.Drawing.Point(1009, 197);
-            this.txt_gioi_tinh.Name = "txt_gioi_tinh";
-            this.txt_gioi_tinh.Size = new System.Drawing.Size(54, 35);
-            this.txt_gioi_tinh.TabIndex = 29;
-            this.txt_gioi_tinh.TabStop = false;
-            this.txt_gioi_tinh.Visible = false;
-            this.txt_gioi_tinh.TextChanged += new System.EventHandler(this.txt_gioi_tinh_TextChanged);
-            // 
             // SoCauAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,7 +488,6 @@
             this.Controls.Add(this.txt_idchubai);
             this.Controls.Add(this.txt_loaiso);
             this.Controls.Add(this.txt_id);
-            this.Controls.Add(this.txt_gioi_tinh);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SoCauAn";
             this.Text = "Sớ cầu an";
@@ -544,10 +516,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
         protected System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.TextBox txt_nickname;
@@ -560,7 +530,6 @@
         private System.Windows.Forms.Panel pnl_Form;
         private System.Windows.Forms.Button btn_ThemSo;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txt_gioi_tinh;
         private System.Windows.Forms.Label lbl_diachi;
         private System.Windows.Forms.TextBox txt_nguyenquan;
         private System.Windows.Forms.TextBox txt_diachi;
