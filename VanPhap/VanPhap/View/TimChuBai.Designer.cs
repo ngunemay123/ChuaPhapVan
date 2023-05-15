@@ -73,7 +73,7 @@
             this.pnl_List.Controls.Add(this.btn_Delete);
             this.pnl_List.Location = new System.Drawing.Point(12, 275);
             this.pnl_List.Name = "pnl_List";
-            this.pnl_List.Size = new System.Drawing.Size(1046, 267);
+            this.pnl_List.Size = new System.Drawing.Size(1075, 267);
             this.pnl_List.TabIndex = 30;
             // 
             // lsv_timchubai
@@ -90,9 +90,9 @@
             this.lsv_timchubai.GridLines = true;
             this.lsv_timchubai.HideSelection = false;
             this.lsv_timchubai.Location = new System.Drawing.Point(0, 0);
-            this.lsv_timchubai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsv_timchubai.Margin = new System.Windows.Forms.Padding(2);
             this.lsv_timchubai.Name = "lsv_timchubai";
-            this.lsv_timchubai.Size = new System.Drawing.Size(1042, 263);
+            this.lsv_timchubai.Size = new System.Drawing.Size(1071, 263);
             this.lsv_timchubai.TabIndex = 0;
             this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
             this.lsv_timchubai.View = System.Windows.Forms.View.Details;
@@ -135,7 +135,7 @@
             this.dgv_list.Location = new System.Drawing.Point(-2, -2);
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.RowHeadersWidth = 51;
-            this.dgv_list.Size = new System.Drawing.Size(1046, 267);
+            this.dgv_list.Size = new System.Drawing.Size(1075, 267);
             this.dgv_list.TabIndex = 1;
             // 
             // btn_Update
@@ -187,11 +187,11 @@
             this.btn_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tim_kiem.ImageIndex = 4;
             this.btn_tim_kiem.ImageList = this.imageList1;
-            this.btn_tim_kiem.Location = new System.Drawing.Point(923, 24);
+            this.btn_tim_kiem.Location = new System.Drawing.Point(928, 24);
             this.btn_tim_kiem.Margin = new System.Windows.Forms.Padding(0);
             this.btn_tim_kiem.Name = "btn_tim_kiem";
             this.btn_tim_kiem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_tim_kiem.Size = new System.Drawing.Size(135, 40);
+            this.btn_tim_kiem.Size = new System.Drawing.Size(150, 40);
             this.btn_tim_kiem.TabIndex = 5;
             this.btn_tim_kiem.Text = "Tìm kiếm";
             this.btn_tim_kiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,6 +212,7 @@
             this.imageList1.Images.SetKeyName(6, "reload_icon.png");
             this.imageList1.Images.SetKeyName(7, "Button-Refresh-icon.png");
             this.imageList1.Images.SetKeyName(8, "bin.png");
+            this.imageList1.Images.SetKeyName(9, "5172950_business_eye_focus_internet_security_icon.png");
             // 
             // btn_huy_bo
             // 
@@ -219,15 +220,15 @@
             this.btn_huy_bo.FlatAppearance.BorderSize = 0;
             this.btn_huy_bo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_huy_bo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_huy_bo.ImageIndex = 2;
+            this.btn_huy_bo.ImageIndex = 9;
             this.btn_huy_bo.ImageList = this.imageList1;
-            this.btn_huy_bo.Location = new System.Drawing.Point(923, 124);
+            this.btn_huy_bo.Location = new System.Drawing.Point(928, 74);
             this.btn_huy_bo.Margin = new System.Windows.Forms.Padding(0);
             this.btn_huy_bo.Name = "btn_huy_bo";
             this.btn_huy_bo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_huy_bo.Size = new System.Drawing.Size(135, 40);
+            this.btn_huy_bo.Size = new System.Drawing.Size(150, 40);
             this.btn_huy_bo.TabIndex = 8;
-            this.btn_huy_bo.Text = "Hủy bỏ";
+            this.btn_huy_bo.Text = "Xem trước";
             this.btn_huy_bo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_huy_bo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_huy_bo.UseVisualStyleBackColor = true;
@@ -241,11 +242,11 @@
             this.btn_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xoa.ImageIndex = 8;
             this.btn_xoa.ImageList = this.imageList1;
-            this.btn_xoa.Location = new System.Drawing.Point(923, 72);
+            this.btn_xoa.Location = new System.Drawing.Point(928, 124);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(0);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btn_xoa.Size = new System.Drawing.Size(135, 40);
+            this.btn_xoa.Size = new System.Drawing.Size(150, 40);
             this.btn_xoa.TabIndex = 6;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,8 +267,6 @@
             // 
             // pnl_Form
             // 
-            this.pnl_Form.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Form.Controls.Add(this.lbl_diachi);
@@ -367,7 +366,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1066, 555);
+            this.ClientSize = new System.Drawing.Size(1095, 555);
             this.Controls.Add(this.pnl_Form);
             this.Controls.Add(this.lbl_DanhsachChuBai);
             this.Controls.Add(this.btn_xoa);
