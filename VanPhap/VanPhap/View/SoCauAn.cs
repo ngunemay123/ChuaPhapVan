@@ -653,12 +653,14 @@ namespace VanPhap.View
         private void button3_Click(object sender, EventArgs e)
         {
             TimChuBai tcb = new TimChuBai();
+            tcb.loaiso = loaiso;
             tcb.Show();
         }
 
         private void btn_ThemSo_Click(object sender, EventArgs e)
         {
             ChuBai cb = new ChuBai();
+            
             cb.Show();
         }
 

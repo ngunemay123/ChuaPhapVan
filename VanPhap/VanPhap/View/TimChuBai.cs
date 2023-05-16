@@ -311,7 +311,7 @@ namespace VanPhap.View
                 /*form2.Show();*/
             }
         }
-
+        
         private void lbl_Birthday_Click(object sender, EventArgs e)
         {
 

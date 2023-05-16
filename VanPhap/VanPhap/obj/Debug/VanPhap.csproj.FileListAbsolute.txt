@@ -181,3 +181,26 @@ E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.Core
 E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
 E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\Demo.mdb
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.exe.config
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.exe
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\VanPhap.pdb
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.AssemblyReference.cache
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.SuggestedBindingRedirects.cache
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.ChuBai.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauAn.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateNguoiNhanCauSieu.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.form_manage.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.Properties.Resources.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauAn.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.NguoiNhanCauSieu.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.SoCauAn.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.SoCauSieu.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.TimChuBai.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.GenerateResource.cache
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.cache
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.exe
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
