@@ -13,7 +13,7 @@ namespace VanPhap.View
 {
     public partial class NguoiNhanCauSieu : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\ChuaPhapVan\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         public NguoiNhanCauSieu()
         {

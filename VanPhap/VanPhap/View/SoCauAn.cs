@@ -22,7 +22,7 @@ namespace VanPhap.View
 {
     public partial class SoCauAn : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\VanPhap\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\ChuaPhapVan\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -94,7 +94,7 @@ namespace VanPhap.View
             txt_nguyenquan.Text = nguyenquan;
 
             string idso = txt_idchubai.Text;
-            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso AND NamMat IS NULL";
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso AND NamMat IS NULL ";
             //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
 
 
@@ -116,15 +116,14 @@ namespace VanPhap.View
                         string sao = reader.GetString(5);
                         string han = reader.GetString(6);*/
 
-                        ListViewItem lvi = new ListViewItem();
+                        ListViewItem lvi = new ListViewItem(reader["HoTenUni"].ToString());
 
-                        lvi.SubItems.Add(reader["HoTenUni"].ToString());
+                        
                         lvi.SubItems.Add(reader["PhapDanhUni"].ToString());
                         lvi.SubItems.Add(reader["NamNu"].ToString());
                         lvi.SubItems.Add(reader["NamSinh"].ToString());
                         lvi.SubItems.Add(reader["AmLich"].ToString());
-                        lvi.SubItems.Add(reader["Sao"].ToString());
-                        lvi.SubItems.Add(reader["Han"].ToString());
+                        lvi.SubItems.Add(reader["Sao"].ToString());               
                         lvi.SubItems.Add(reader["ID"].ToString());
                         lvi.SubItems.Add(reader["IDSo"].ToString());
 
@@ -291,8 +290,8 @@ namespace VanPhap.View
                 {
                     // Lấy giá trị khóa chính từ dòng đang chọn
 
-                    string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[8].Text; // Giả sử khóa chính ở cột đầu tiên
-                    string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[9].Text;
+                    string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[6].Text; // Giả sử khóa chính ở cột đầu tiên
+                    string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[7].Text;
 
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
@@ -489,28 +488,28 @@ namespace VanPhap.View
 
                 if (item.Checked)
                 {
-                    string kiemTra = item.SubItems[3].Text;//gioi tinh
+                    string kiemTra = item.SubItems[2].Text;//gioi tinh
                     if (kiemTra.Equals("1"))
                     {
                         ls[count].Add("X");
                         ls[count].Add("");
-                        ls[count].Add(item.SubItems[1].Text); //name
-                        ls[count].Add(item.SubItems[2].Text); // phapdanh
-                        ls[count].Add(item.SubItems[4].Text);//nam sinh
-                        ls[count].Add(item.SubItems[5].Text);//tuoi
-                        ls[count].Add(item.SubItems[6].Text);//sao
-                        ls[count].Add(item.SubItems[7].Text);//han
+                        ls[count].Add(item.SubItems[0].Text); //name
+                        ls[count].Add(item.SubItems[1].Text); // phapdanh
+                        ls[count].Add(item.SubItems[3].Text);//nam sinh
+                        ls[count].Add(item.SubItems[4].Text);//tuoi
+                        ls[count].Add(item.SubItems[5].Text);//sao
+                    
                     }
                     else
                     {
                         ls[count].Add("");
                         ls[count].Add("X");
-                        ls[count].Add(item.SubItems[1].Text); //name
-                        ls[count].Add(item.SubItems[2].Text); // phapdanh
-                        ls[count].Add(item.SubItems[4].Text);//nam sinh
-                        ls[count].Add(item.SubItems[5].Text);//tuoi
-                        ls[count].Add(item.SubItems[6].Text);//sao
-                        ls[count].Add(item.SubItems[7].Text);//han
+                        ls[count].Add(item.SubItems[0].Text); //name
+                        ls[count].Add(item.SubItems[1].Text); // phapdanh
+                        ls[count].Add(item.SubItems[3].Text);//nam sinh
+                        ls[count].Add(item.SubItems[4].Text);//tuoi
+                        ls[count].Add(item.SubItems[5].Text);//sao
+                    
                     }
 
 
@@ -522,7 +521,7 @@ namespace VanPhap.View
             try
             {
                 // tạo tệp mới
-                string path = @"C:\Git\VanPhap\VanPhap\test\test.html";
+                string path = @"C:\Git\ChuaPhapVan\VanPhap\html\index.html";
                 File.Create(path).Close();
                 using (StreamWriter sw = new StreamWriter(path))
                 {
@@ -590,7 +589,7 @@ namespace VanPhap.View
                     sw.WriteLine("<td width=\"150\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">NAÊM SINH</font></b></td>");
                     sw.WriteLine("<td width=\"100\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">TUOÅI</font></b></td>");
                     sw.WriteLine("<td width=\"130\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">SAO</font></b></td>");
-                    sw.WriteLine("<td width=\"130\" align=\"center\" height=\"39\"><b><font face=\"VNI-Times\" size=\"3\">HẠN</font></b></td>");
+                    
                     sw.WriteLine("</tr>");
                     //Dữ liệu thêm vào
                     foreach (List<string> sublist in ls)
@@ -615,7 +614,7 @@ namespace VanPhap.View
 
 
                 }
-                Process.Start("C:\\Git\\test.html");
+                Process.Start("C:\\Git\\ChuaPhapVan\\VanPhap\\html\\index.html");
             }
             catch (Exception ex)
             {
@@ -667,6 +666,11 @@ namespace VanPhap.View
         private void button1_Click_2(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_lammoi_Click(object sender, EventArgs e)
+        {
+            HienDanhSach();
         }
     }
 }

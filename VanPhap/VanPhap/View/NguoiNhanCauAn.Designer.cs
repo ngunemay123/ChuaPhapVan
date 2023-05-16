@@ -43,9 +43,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_id = new System.Windows.Forms.TextBox();
             this.pnl_Form = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_namsinh = new System.Windows.Forms.ComboBox();
             this.cbb_gioitinh = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_gioitinh_1 = new System.Windows.Forms.TextBox();
             this.txt_Tuoi = new System.Windows.Forms.TextBox();
             this.txt_tuoiii = new System.Windows.Forms.TextBox();
             this.txt_id_kiemtra = new System.Windows.Forms.TextBox();
@@ -64,6 +64,7 @@
             this.txt_id_so.Size = new System.Drawing.Size(53, 42);
             this.txt_id_so.TabIndex = 30;
             this.txt_id_so.TabStop = false;
+            this.txt_id_so.TextChanged += new System.EventHandler(this.txt_id_so_TextChanged);
             // 
             // lbl_name
             // 
@@ -197,9 +198,9 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Form.Controls.Add(this.comboBox1);
+            this.pnl_Form.Controls.Add(this.comboBox_namsinh);
             this.pnl_Form.Controls.Add(this.cbb_gioitinh);
-            this.pnl_Form.Controls.Add(this.textBox1);
+            this.pnl_Form.Controls.Add(this.txt_gioitinh_1);
             this.pnl_Form.Controls.Add(this.txt_Tuoi);
             this.pnl_Form.Controls.Add(this.txt_tuoiii);
             this.pnl_Form.Controls.Add(this.txt_id_kiemtra);
@@ -220,15 +221,15 @@
             this.pnl_Form.Size = new System.Drawing.Size(1012, 205);
             this.pnl_Form.TabIndex = 66;
             // 
-            // comboBox1
+            // comboBox_namsinh
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(188, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(289, 24);
-            this.comboBox1.TabIndex = 46;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox_namsinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_namsinh.FormattingEnabled = true;
+            this.comboBox_namsinh.Location = new System.Drawing.Point(172, 148);
+            this.comboBox_namsinh.Name = "comboBox_namsinh";
+            this.comboBox_namsinh.Size = new System.Drawing.Size(289, 24);
+            this.comboBox_namsinh.TabIndex = 46;
+            this.comboBox_namsinh.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cbb_gioitinh
             // 
@@ -243,14 +244,14 @@
             this.cbb_gioitinh.TabIndex = 45;
             this.cbb_gioitinh.SelectedIndexChanged += new System.EventHandler(this.cbb_gioitinh_SelectedIndexChanged);
             // 
-            // textBox1
+            // txt_gioitinh_1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(493, 168);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(305, 42);
-            this.textBox1.TabIndex = 44;
+            this.txt_gioitinh_1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gioitinh_1.Location = new System.Drawing.Point(449, 168);
+            this.txt_gioitinh_1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_gioitinh_1.Name = "txt_gioitinh_1";
+            this.txt_gioitinh_1.Size = new System.Drawing.Size(305, 42);
+            this.txt_gioitinh_1.TabIndex = 44;
             // 
             // txt_Tuoi
             // 
@@ -349,7 +350,7 @@
             this.Name = "NguoiNhanCauAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Người nhận cầu an";
-            this.Load += new System.EventHandler(this.NguoiNhanCauAn_Load);
+            this.Load += new System.EventHandler(this.txt_id_so_TextChanged);
             this.pnl_Form.ResumeLayout(false);
             this.pnl_Form.PerformLayout();
             this.ResumeLayout(false);
@@ -376,8 +377,8 @@
         private System.Windows.Forms.TextBox txt_tuoiii;
         private System.Windows.Forms.TextBox txt_Tuoi;
         private System.Windows.Forms.ImageList icon;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_gioitinh_1;
+        private System.Windows.Forms.ComboBox comboBox_namsinh;
         private System.Windows.Forms.ComboBox cbb_gioitinh;
     }
 }
