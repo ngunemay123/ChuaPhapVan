@@ -54,6 +54,7 @@
             this.txt_sao = new System.Windows.Forms.TextBox();
             this.txt_idchubai = new System.Windows.Forms.TextBox();
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_gioitinh = new System.Windows.Forms.TextBox();
             this.comboBox_gioitinh = new System.Windows.Forms.ComboBox();
             this.comboBox_NamSinh = new System.Windows.Forms.ComboBox();
             this.txt_tuoiii = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@
             this.txt_update = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_xacnhan = new System.Windows.Forms.Button();
-            this.txt_gioitinh = new System.Windows.Forms.TextBox();
             this.pnl_Form.SuspendLayout();
             this.pnl_list.SuspendLayout();
             this.SuspendLayout();
@@ -314,6 +314,19 @@
             this.pnl_Form.Size = new System.Drawing.Size(1012, 205);
             this.pnl_Form.TabIndex = 65;
             // 
+            // txt_gioitinh
+            // 
+            this.txt_gioitinh.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_gioitinh.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_gioitinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gioitinh.Location = new System.Drawing.Point(989, 25);
+            this.txt_gioitinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_gioitinh.Name = "txt_gioitinh";
+            this.txt_gioitinh.Size = new System.Drawing.Size(37, 42);
+            this.txt_gioitinh.TabIndex = 67;
+            this.txt_gioitinh.Visible = false;
+            this.txt_gioitinh.TextChanged += new System.EventHandler(this.txt_gioitinh_TextChanged);
+            // 
             // comboBox_gioitinh
             // 
             this.comboBox_gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -336,12 +349,6 @@
             this.comboBox_NamSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_NamSinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_NamSinh.FormattingEnabled = true;
-            this.comboBox_NamSinh.Items.AddRange(new object[] {
-            "1942",
-            "1943",
-            "1944",
-            "1945",
-            "1946"});
             this.comboBox_NamSinh.Location = new System.Drawing.Point(172, 129);
             this.comboBox_NamSinh.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_NamSinh.Name = "comboBox_NamSinh";
@@ -443,19 +450,6 @@
             this.btn_xacnhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xacnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xacnhan.UseVisualStyleBackColor = true;
-            // 
-            // txt_gioitinh
-            // 
-            this.txt_gioitinh.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_gioitinh.Cursor = System.Windows.Forms.Cursors.No;
-            this.txt_gioitinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gioitinh.Location = new System.Drawing.Point(989, 25);
-            this.txt_gioitinh.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_gioitinh.Name = "txt_gioitinh";
-            this.txt_gioitinh.Size = new System.Drawing.Size(37, 42);
-            this.txt_gioitinh.TabIndex = 67;
-            this.txt_gioitinh.Visible = false;
-            this.txt_gioitinh.TextChanged += new System.EventHandler(this.txt_gioitinh_TextChanged);
             // 
             // FormUpdateNguoiNhanCauAn
             // 

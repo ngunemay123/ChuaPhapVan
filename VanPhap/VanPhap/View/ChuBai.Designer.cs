@@ -45,6 +45,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txt_id1 = new System.Windows.Forms.TextBox();
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_gioitinh_1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_sao = new System.Windows.Forms.TextBox();
             this.lbl_Tuoi = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.lbl_NamSinh = new System.Windows.Forms.Label();
             this.comboBox_GioiTinh = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.txt_gioitinh_1 = new System.Windows.Forms.TextBox();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.txt_id.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_id.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(463, 22);
-            this.txt_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(9, 42);
             this.txt_id.TabIndex = 30;
@@ -87,7 +87,7 @@
             this.txt_nguyenquan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nguyenquan.Location = new System.Drawing.Point(540, 226);
-            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(439, 42);
             this.txt_nguyenquan.TabIndex = 4;
@@ -111,7 +111,7 @@
             this.txt_name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(172, 22);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(300, 42);
             this.txt_name.TabIndex = 1;
@@ -146,7 +146,7 @@
             this.txt_nickname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nickname.Location = new System.Drawing.Point(172, 75);
-            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(300, 42);
             this.txt_nickname.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.txt_diachi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_diachi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_diachi.Location = new System.Drawing.Point(12, 226);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(460, 42);
             this.txt_diachi.TabIndex = 3;
@@ -227,7 +227,7 @@
             this.txt_id1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_id1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id1.Location = new System.Drawing.Point(460, 22);
-            this.txt_id1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_id1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_id1.Name = "txt_id1";
             this.txt_id1.Size = new System.Drawing.Size(12, 42);
             this.txt_id1.TabIndex = 36;
@@ -258,11 +258,21 @@
             this.pnl_Form.Controls.Add(this.lbl_NickName);
             this.pnl_Form.Controls.Add(this.txt_nickname);
             this.pnl_Form.Location = new System.Drawing.Point(16, 15);
-            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1004, 296);
             this.pnl_Form.TabIndex = 67;
             this.pnl_Form.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Form_Paint);
+            // 
+            // txt_gioitinh_1
+            // 
+            this.txt_gioitinh_1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_gioitinh_1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gioitinh_1.Location = new System.Drawing.Point(397, 188);
+            this.txt_gioitinh_1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_gioitinh_1.Name = "txt_gioitinh_1";
+            this.txt_gioitinh_1.Size = new System.Drawing.Size(111, 42);
+            this.txt_gioitinh_1.TabIndex = 45;
             // 
             // label2
             // 
@@ -284,7 +294,7 @@
             this.txt_sao.Enabled = false;
             this.txt_sao.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sao.Location = new System.Drawing.Point(677, 129);
-            this.txt_sao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_sao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_sao.Name = "txt_sao";
             this.txt_sao.Size = new System.Drawing.Size(300, 42);
             this.txt_sao.TabIndex = 43;
@@ -310,7 +320,7 @@
             this.txt_Tuoi.Enabled = false;
             this.txt_Tuoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Tuoi.Location = new System.Drawing.Point(677, 75);
-            this.txt_Tuoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Tuoi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Tuoi.Name = "txt_Tuoi";
             this.txt_Tuoi.Size = new System.Drawing.Size(300, 42);
             this.txt_Tuoi.TabIndex = 41;
@@ -322,35 +332,8 @@
             this.comboBox_NamSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_NamSinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_NamSinh.FormattingEnabled = true;
-            this.comboBox_NamSinh.Items.AddRange(new object[] {
-            "1942",
-            "1943",
-            "1944",
-            "1945",
-            "1946",
-            "1947",
-            "1948",
-            "1949",
-            "1950",
-            "1951",
-            "1952",
-            "1953",
-            "1954",
-            "1955",
-            "1956",
-            "1957",
-            "1958",
-            "1959",
-            "1960",
-            "1961",
-            "1962",
-            "1963",
-            "1964",
-            "1965",
-            "1966",
-            "1967"});
             this.comboBox_NamSinh.Location = new System.Drawing.Point(172, 129);
-            this.comboBox_NamSinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_NamSinh.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_NamSinh.Name = "comboBox_NamSinh";
             this.comboBox_NamSinh.Size = new System.Drawing.Size(300, 42);
             this.comboBox_NamSinh.TabIndex = 40;
@@ -405,16 +388,6 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txt_gioitinh_1
-            // 
-            this.txt_gioitinh_1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_gioitinh_1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gioitinh_1.Location = new System.Drawing.Point(397, 188);
-            this.txt_gioitinh_1.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_gioitinh_1.Name = "txt_gioitinh_1";
-            this.txt_gioitinh_1.Size = new System.Drawing.Size(111, 42);
-            this.txt_gioitinh_1.TabIndex = 45;
-            // 
             // ChuBai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -425,7 +398,7 @@
             this.Controls.Add(this.pnl_Form);
             this.Controls.Add(this.btn_Add);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ChuBai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm chủ bái";

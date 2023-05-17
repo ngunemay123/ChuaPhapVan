@@ -64,7 +64,6 @@
             this.txt_id_so.Size = new System.Drawing.Size(53, 42);
             this.txt_id_so.TabIndex = 30;
             this.txt_id_so.TabStop = false;
-            this.txt_id_so.TextChanged += new System.EventHandler(this.txt_id_so_TextChanged);
             // 
             // lbl_name
             // 
@@ -225,7 +224,7 @@
             // 
             this.comboBox_namsinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_namsinh.FormattingEnabled = true;
-            this.comboBox_namsinh.Location = new System.Drawing.Point(172, 148);
+            this.comboBox_namsinh.Location = new System.Drawing.Point(172, 137);
             this.comboBox_namsinh.Name = "comboBox_namsinh";
             this.comboBox_namsinh.Size = new System.Drawing.Size(289, 24);
             this.comboBox_namsinh.TabIndex = 46;
@@ -350,7 +349,7 @@
             this.Name = "NguoiNhanCauAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Người nhận cầu an";
-            this.Load += new System.EventHandler(this.txt_id_so_TextChanged);
+            this.Load += new System.EventHandler(this.NguoiNhanCauAn_Load_1);
             this.pnl_Form.ResumeLayout(false);
             this.pnl_Form.PerformLayout();
             this.ResumeLayout(false);

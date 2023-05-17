@@ -60,22 +60,10 @@ namespace VanPhap.View
         {
            
             comboBox_namsinh.DropDownHeight = comboBox_namsinh.ItemHeight * 14;// nhảy 12 số combobox không được xóa !!!!!!
-
-            //    int year = int.Parse(comboBox1.SelectedItem.ToString());
-
-
-            // Xác định can và chi 000
             string[] can = { "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý" };
             string[] chi = { "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi" };
-
-            
-
-            
-
-            // In kết quả
-           // txt_tuoi.Text = canChi;
-
             txt_id_so.Text = DataFromForm11;
+
             List<string> cuong = new List<string>();
             for( int i = 1900; i < 2023; i++ )
             {
@@ -170,8 +158,7 @@ namespace VanPhap.View
             }
             txt_name.Text = "";
             txt_nickname.Text = "";
-            comboBox_namsinh.Items.Clear();
-            cbb_gioitinh.Items.Clear();
+            
             txt_Tuoi.Text = "";
             txt_sao.Text = "";
         }
@@ -471,10 +458,28 @@ namespace VanPhap.View
             
         }
 
-        private void txt_id_so_TextChanged(object sender, EventArgs e)
+        private void NguoiNhanCauAn_Load_1(object sender, EventArgs e)
         {
+            comboBox_namsinh.DropDownHeight = comboBox_namsinh.ItemHeight * 14;// nhảy 12 số combobox không được xóa !!!!!!
+            string[] can = { "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý" };
+            string[] chi = { "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi" };
+            txt_id_so.Text = DataFromForm11;
 
+            List<string> cuong = new List<string>();
+            for (int i = 1900; i < 2023; i++)
+            {
+                int canIndex = (i - 4) % 10;
+                int chiIndex = (i - 4) % 12;
+                string canChi = can[canIndex] + " " + chi[chiIndex];
+                cuong.Add(i.ToString() + " " + canChi);
+            }
+            // Gán dữ liệu từ mảng vào ComboBox
+
+            comboBox_namsinh.Items.AddRange(cuong.ToArray());
+
+            // Gán dữ liệu từ mảng vào ComboBox
         }
+
 
         /* private void comboBox1_KeyUp(object sender, KeyEventArgs e)
          {
