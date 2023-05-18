@@ -436,7 +436,7 @@ namespace VanPhap.View
                     }
                 }
             }
-          
+            this.Close();
         }
 
         private void txt_birthday1_TextChanged(object sender, EventArgs e)

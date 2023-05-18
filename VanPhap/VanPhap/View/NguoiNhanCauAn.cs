@@ -161,6 +161,10 @@ namespace VanPhap.View
             
             txt_Tuoi.Text = "";
             txt_sao.Text = "";
+            this.Close();
+            SoCauAn form2 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+            form2.HienDanhSach();
+            form2.Show();
         }
     
 
@@ -460,6 +464,11 @@ namespace VanPhap.View
 
         private void NguoiNhanCauAn_Load_1(object sender, EventArgs e)
         {
+           
+        }
+
+        private void NguoiNhanCauAn_Load_2(object sender, EventArgs e)
+        {
             comboBox_namsinh.DropDownHeight = comboBox_namsinh.ItemHeight * 14;// nhảy 12 số combobox không được xóa !!!!!!
             string[] can = { "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý" };
             string[] chi = { "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi" };
@@ -478,6 +487,7 @@ namespace VanPhap.View
             comboBox_namsinh.Items.AddRange(cuong.ToArray());
 
             // Gán dữ liệu từ mảng vào ComboBox
+
         }
 
 

@@ -85,6 +85,12 @@
     <Compile Include="View\ChuBai.Designer.cs">
       <DependentUpon>ChuBai.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormUpdateChuBai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormUpdateChuBai.designer.cs">
+      <DependentUpon>FormUpdateChuBai.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormUpdateNguoiNhanCauAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,12 @@
     </Compile>
     <Compile Include="View\FormUpdateNguoiNhanCauSieu.Designer.cs">
       <DependentUpon>FormUpdateNguoiNhanCauSieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormXemTruoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormXemTruoc.Designer.cs">
+      <DependentUpon>FormXemTruoc.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Manage.cs">
       <SubType>Form</SubType>
@@ -138,11 +150,17 @@
     <EmbeddedResource Include="View\ChuBai.resx">
       <DependentUpon>ChuBai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FormUpdateChuBai.resx">
+      <DependentUpon>FormUpdateChuBai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormUpdateNguoiNhanCauAn.resx">
       <DependentUpon>FormUpdateNguoiNhanCauAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormUpdateNguoiNhanCauSieu.resx">
       <DependentUpon>FormUpdateNguoiNhanCauSieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormXemTruoc.resx">
+      <DependentUpon>FormXemTruoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manage.resx">
       <DependentUpon>Manage.cs</DependentUpon>

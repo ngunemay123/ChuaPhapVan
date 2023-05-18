@@ -204,3 +204,5 @@ C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CoreCompileInputs.ca
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.csproj.CopyComplete
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormXemTruoc.resources
+C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateChuBai.resources

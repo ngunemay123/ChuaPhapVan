@@ -186,6 +186,8 @@ namespace VanPhap.View
                 }
             }
         }
+
+
         private void TimChuBai_Load(object sender, EventArgs e)
         {
         }
@@ -277,7 +279,7 @@ namespace VanPhap.View
                 //OpentChildForm(new View.SoCauAn(), null);
                 if (loaiso.Equals("CauAn"))
                 {
-                    SoCauAn form1 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+                    FormXemTruoc form1 = new FormXemTruoc();
                     if (form1 != null)
                     {
                         form1.id = id;
@@ -286,7 +288,8 @@ namespace VanPhap.View
                         form1.diachi = diachi;
                         form1.nguyenquan = nguyenquan;
                         form1.UpdateData("Cuong");
-                        this.Close();
+                        
+                        form1.Show();
                     }
                 }
                 else

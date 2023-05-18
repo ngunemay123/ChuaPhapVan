@@ -94,7 +94,7 @@ namespace VanPhap.View
             txt_nguyenquan.Text = nguyenquan;
 
             string idso = txt_idchubai.Text;
-            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso AND NamMat IS NULL ";
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,Sao from tblchitietso where idso = @idso AND NamMat IS NULL ";
             //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
 
 
@@ -115,14 +115,15 @@ namespace VanPhap.View
                         string amlich = reader.GetString(4);
                         string sao = reader.GetString(5);
                         string han = reader.GetString(6);*/
-
+                        string namSinh = reader["NamSinh"].ToString();
+                        double tuoi = 2023 - double.Parse(namSinh);
                         ListViewItem lvi = new ListViewItem(reader["HoTenUni"].ToString());
 
                         
                         lvi.SubItems.Add(reader["PhapDanhUni"].ToString());
                         lvi.SubItems.Add(reader["NamNu"].ToString());
                         lvi.SubItems.Add(reader["NamSinh"].ToString());
-                        lvi.SubItems.Add(reader["AmLich"].ToString());
+                        lvi.SubItems.Add(tuoi.ToString() );
                         lvi.SubItems.Add(reader["Sao"].ToString());               
                         lvi.SubItems.Add(reader["ID"].ToString());
                         lvi.SubItems.Add(reader["IDSo"].ToString());
@@ -160,7 +161,7 @@ namespace VanPhap.View
                 formNguoiNhan.DataFromForm11 = id;
                 formNguoiNhan.Show();
 
-
+               
                
             }
         }
@@ -477,17 +478,16 @@ namespace VanPhap.View
 
             foreach (ListViewItem item in lsv_danhsach_cauan.Items)
             {
-                if (item.Checked)
-                {
+                
                     ls.Add(new List<string>());
-                }
+                
 
             }
             foreach (ListViewItem item in lsv_danhsach_cauan.Items)
             {
 
-                if (item.Checked)
-                {
+               
+                
                     string kiemTra = item.SubItems[2].Text;//gioi tinh
                     if (kiemTra.Equals("1"))
                     {
@@ -515,7 +515,7 @@ namespace VanPhap.View
 
 
                     count++;
-                }
+                
             }
 
             try
@@ -671,6 +671,18 @@ namespace VanPhap.View
         private void btn_lammoi_Click(object sender, EventArgs e)
         {
             HienDanhSach();
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            string nguyenquann = txt_nguyenquan.Text;
+            string namee = txt_name.Text;
+            FormUpdateChuBai tcb = new FormUpdateChuBai();
+            tcb.idso = id; ;
+            tcb.nguyenquan = nguyenquann;
+            tcb.name = namee;
+            tcb.Show();
+
         }
     }
 }
