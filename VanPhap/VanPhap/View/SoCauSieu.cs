@@ -553,5 +553,9 @@ namespace VanPhap.View
 
         }
 
+        private void lsv_danhsach_causieu_ItemActivate(object sender, EventArgs e)
+        {
+
+        }
     }
 }

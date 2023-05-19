@@ -187,6 +187,17 @@ namespace VanPhap.View
             }
         }
 
+        public string IDTuUpdate { get;}
+        public void timKiem()
+        {
+
+
+  
+
+
+
+             
+        }
 
         private void TimChuBai_Load(object sender, EventArgs e)
         {
@@ -333,6 +344,70 @@ namespace VanPhap.View
         private void btn_lammoi_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TimChuBai_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lsv_timchubai_ItemActivate_1(object sender, EventArgs e)
+        {
+            if (lsv_timchubai.SelectedItems.Count > 0)
+            {
+                // Lấy item được kích hoạt (được nhấp vào)
+                ListViewItem activatedItem = lsv_timchubai.SelectedItems[0];
+
+                //Hiển thị thông tin từ item vào TextBox
+                string id = activatedItem.SubItems[0].Text;
+                string chubai = activatedItem.SubItems[1].Text;
+                string phapdanh = activatedItem.SubItems[2].Text;
+                string diachi = activatedItem.SubItems[3].Text;
+                string nguyenquan = activatedItem.SubItems[4].Text;
+
+                /*SoCauAn form2 = new SoCauAn();
+                form2.id = id; 
+                form2.chubai = chubai;
+                form2.phapdanh = phapdanh;
+                form2.diachi = diachi;
+                form2.nguyenquan = nguyenquan;*/
+                //OpentChildForm(new View.SoCauAn(), null);
+                if (loaiso.Equals("CauAn"))
+                {
+                    FormXemTruoc form1 = new FormXemTruoc();
+                    if (form1 != null)
+                    {
+                        form1.id = id;
+                        form1.chubai = chubai;
+                        form1.phapdanh = phapdanh;
+                        form1.diachi = diachi;
+                        form1.nguyenquan = nguyenquan;
+                        form1.UpdateData("Cuong");
+
+                        form1.Show();
+                    }
+                }
+                else
+                {
+                    SoCauSieu form2 = Application.OpenForms.OfType<SoCauSieu>().FirstOrDefault();
+                    if (form2 != null)
+                    {
+                        form2.id = id;
+                        form2.chubai = chubai;
+                        form2.phapdanh = phapdanh;
+                        form2.diachi = diachi;
+                        form2.nguyenquan = nguyenquan;
+                        form2.UpdateData("Cuong");
+                        this.Close();
+                    }
+                }
+
+
+
+
+                // Hiển thị Form 2
+                /*form2.Show();*/
+            }
         }
     }
 }

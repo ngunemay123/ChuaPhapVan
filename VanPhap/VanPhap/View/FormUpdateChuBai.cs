@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,51 +52,48 @@ namespace VanPhap.View
         public string nguyenquan { get; set; }
         public string gioitinh { get; set; }
 
-   /*    public void HienDanhSach()
+      public void HienDanhSach()
         {
 
-
-
+            txt_name_kiemtra.Text = name;
             txt_id1.Text = idso.ToString();
             string idsoo = txt_id1.Text;
-            txt_name.Text = name;
+            
             string namee = txt_name.Text;
             txt_diachi.Text = diachi;
             txt_nguyenquan.Text = nguyenquan;
             string nguyenquann = txt_nguyenquan.Text;
-
-            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh ,Sao from tblchitietso where idso = @idso AND  HoTenUni  LIKE " + namee ;
+            string nameKiemTra = txt_name_kiemtra.Text;
+            
+            
+            
+            
+            string query = "select NamNu, NamSinh,  HoTenUni,  PhapDanhUni from tblchitietso where idso = @idso AND  HoTenUni  = @namee ";
             //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
-
-
             using (OleDbConnection connection = new OleDbConnection(strCon))
             {
                 OleDbCommand command = new OleDbCommand(query, connection);
                 command.Parameters.AddWithValue("@idso", idsoo); // Truyền giá trị vào tham số @param
+                command.Parameters.AddWithValue("@namee", nameKiemTra);
                 connection.Open();
-
                 using (OleDbDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        *//*string hoten = reader.GetString(0);
+                        /*string hoten = reader.GetString(0);
                         string phapdanh1 = reader.GetString(1);
                         double gioitinh = reader.GetDouble(2);
                         double namsinh = reader.GetDouble(3);
                         string amlich = reader.GetString(4);
                         string sao = reader.GetString(5);
-                        string han = reader.GetString(6);*//*
-                        
-                       
-                        string hoten = reader["HoTenUni"].ToString();
-                        string phapdanh = reader["PhapDanhUni"].ToString();
-                        string namnu = reader["NamNu"].ToString();
+                        string han = reader.GetString(6);*/
                         string namSinh = reader["NamSinh"].ToString();
-                        string gioitinh  = reader["NamNu"].ToString();
-                       
-                        txt_nguyenquan.Text = nguyenquann;
-                        txt_name.Text = hoten;
-                        txt_nickname.Text = phapdanh;
+                        string gioiTinh=  reader["NamNu"].ToString();
+                        txt_name.Text =  reader["HoTenUni"].ToString();
+                        txt_nickname.Text = reader["PhapDanhUni"].ToString();
+                     
+
+
                         for (int i = 0; i < comboBox_NamSinh.Items.Count; i++)
                         {
                             string comboBoxItemText = comboBox_NamSinh.Items[i].ToString();
@@ -106,7 +104,7 @@ namespace VanPhap.View
                                 break;
                             }
                         }
-                        if (gioitinh.Equals("1"))
+                        if (gioiTinh.Equals("1"))
                         {
                             comboBox_GioiTinh.SelectedItem = "Nam";
 
@@ -115,13 +113,40 @@ namespace VanPhap.View
                         {
                             comboBox_GioiTinh.SelectedItem = "Nữ";
                         }
+                        
+                        
+
 
                     }
-
-
                 }
             }
-        }*/
+            string query1 = "Select DiaChiUni, NguyenQuanUni from tblphattu  where id = @idso";
+            using (OleDbConnection connection = new OleDbConnection(strCon))
+            {
+                OleDbCommand command = new OleDbCommand(query1, connection);
+                command.Parameters.AddWithValue("@idso", idsoo); // Truyền giá trị vào tham số @param
+                connection.Open();
+                using (OleDbDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        txt_diachi.Text = reader["DiaChiUni"].ToString();
+
+                        txt_nguyenquan.Text = reader["NguyenQuanUni"].ToString();
+                        
+                    }
+
+                }
+
+
+
+            }
+
+
+
+
+        }
         private void FormUpdateChuBai_Load(object sender, EventArgs e)
         {
            
@@ -159,10 +184,11 @@ namespace VanPhap.View
             comboBox_NamSinh.Items.AddRange(cuong.ToArray());
 
             HienDanhSach();
+           
 
 
         }
-        
+
 
 
         
@@ -178,47 +204,154 @@ namespace VanPhap.View
             }
             else
             {
-
-
-
-
                 double id = double.Parse(txt_id1.Text);
-
                 //double namnu = double.Parse(txt_gioi_tinh.Text);
-                string hoten = txt_name.Text;
-                string phapdanh = txt_nickname.Text;
-                string nguyenquan = txt_nguyenquan.Text;
-                string diachi = txt_diachi.Text;
-                try
+                /////
+                string inputHoten = txt_name.Text;
+                string[] words = inputHoten.Split(' ');
+
+                for (int i = 0; i < words.Length; i++)
                 {
-                    using (OleDbConnection connection = new OleDbConnection(strCon))
+                    if (!string.IsNullOrWhiteSpace(words[i]))
                     {
-                        connection.Open();
-
-
-                        // Thực hiện câu lệnh DELETE
-                        // string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
-                        // string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso";
-                        string query = "UPDATE tblphattu SET HoTenUni = ?, PhapDanhUni = ?,DiaChiUni = ? ,NguyenQuanUni = ? WHERE ID = ? ";
-                        using (OleDbCommand command = new OleDbCommand(query, connection))
-                        {
-
-                            command.Parameters.AddWithValue("?", hoten);
-                            command.Parameters.AddWithValue("?", phapdanh);
-                            command.Parameters.AddWithValue("?", diachi);
-                            command.Parameters.AddWithValue("?", nguyenquan);
-                            command.Parameters.AddWithValue("?", id);
-
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Cập nhật thành công");
-                            this.Close();
-                        }
-
+                        words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
                     }
                 }
-                catch { MessageBox.Show("Cập nhật thất bại"); }
 
-            }//Dong if
+                string hoten = string.Join(" ", words);
+
+                //////
+                string inputphapdanh = txt_nickname.Text;
+                string[] words1 = inputphapdanh.Split(' ');
+
+                for (int i = 0; i < words1.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words1[i]))
+                    {
+                        words1[i] = char.ToUpper(words1[i][0]) + words1[i].Substring(1);
+                    }
+                }
+
+                string phapdanh = string.Join(" ", words1);
+                /////
+                string hoTenKiemTra = txt_name_kiemtra.Text;
+                //////
+                string inputnguyenquyan = txt_nguyenquan.Text;
+                string[] words2 = inputnguyenquyan.Split(' ');
+
+                for (int i = 0; i < words2.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words2[i]))
+                    {
+                        words2[i] = char.ToUpper(words2[i][0]) + words2[i].Substring(1);
+                    }
+                }
+
+                string nguyenquan = string.Join(" ", words2);
+                ///
+                string inputdiachi = txt_diachi.Text;
+                string[] words3 = inputdiachi.Split(' ');
+
+                for (int i = 0; i < words3.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words3[i]))
+                    {
+                        words3[i] = char.ToUpper(words3[i][0]) + words3[i].Substring(1);
+                    }
+                }
+
+                string diachi = string.Join(" ", words3);
+                ///
+              
+                if (comboBox_GioiTinh.SelectedItem.Equals("Nam"))
+                {
+                    txt_gioi_tinh.Text = "1";
+                }
+                else
+                {
+                    txt_gioi_tinh.Text = "2";
+                }
+                double namnu = double.Parse(txt_gioi_tinh.Text);
+                string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
+                string[] arr = selectedValue.Split(' ');
+                double namsinh = double.Parse(arr[0]);
+                var sao = txt_sao.Text ;
+
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    connection.Open();
+
+
+                    // Thực hiện câu lệnh DELETE
+                    // string query = "DELETE FROM tblchitietso WHERE id = @id AND idso = @idso";
+                    // string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,AmLich,Sao,Han from tblchitietso where idso = @idso";
+                    string query = "UPDATE tblphattu SET HoTenUni = ?, PhapDanhUni = ?,DiaChiUni = ? ,NguyenQuanUni = ? WHERE ID = ? ";
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+
+                        command.Parameters.AddWithValue("?", hoten);
+                        command.Parameters.AddWithValue("?", phapdanh);
+                        command.Parameters.AddWithValue("?", diachi);
+                        command.Parameters.AddWithValue("?", nguyenquan);
+                        command.Parameters.AddWithValue("?", id);
+
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Cập nhật thành công");
+                        this.Close();
+                    }
+
+
+                }
+
+
+
+                string query1 = "UPDATE tblchitietso SET HoTenUni = ?, PhapDanhUni = ?, NamNu = ?, NamSinh = ?, Sao = ? WHERE IDso = ? AND HoTenUni = ?";
+
+
+                
+
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    using (OleDbCommand command = new OleDbCommand(query1, connection))
+                    {
+
+                        connection.Open();
+                        // Gán giá trị cho các tham số trong câu lệnh INSERT
+
+                        command.Parameters.AddWithValue("?", hoten);
+                        command.Parameters.AddWithValue("?", phapdanh);
+                        command.Parameters.AddWithValue("?", namnu);
+                        command.Parameters.AddWithValue("?", namsinh);
+                        command.Parameters.AddWithValue("?", sao);
+                        command.Parameters.AddWithValue("?", id);
+                        command.Parameters.AddWithValue("?", hoTenKiemTra);
+                        // Thực thi câu lệnh INSERT
+                        int rowsAffected = command.ExecuteNonQuery();
+                        // Kiểm tra số dòng bị ảnh hưởng
+
+                    }
+
+                    SoCauAn form1 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+                    TimChuBai form2 = Application.OpenForms.OfType<TimChuBai>().FirstOrDefault();
+                    
+                    
+                    form1.id = txt_id1.Text;
+                    form1.chubai = hoten;
+                    form1.phapdanh = phapdanh;
+                    form1.diachi = diachi;
+                    form1.nguyenquan = nguyenquan;
+                    form1.UpdateData("Cuong");
+
+
+                    form1.Show();
+                    this.Close();
+                }//Dong if
+
+            }
+           
+
+            
+
         }
         private void txt_id1_TextChanged(object sender, EventArgs e)
         {
@@ -463,26 +596,47 @@ namespace VanPhap.View
         }
         private void comboBox_GioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = txt_Tuoi.Text;
-            string[] arr = selectedValue.Split(' ');
-            int tuoi = int.Parse(arr[0]);
-            string selectedValue1 = comboBox_GioiTinh.SelectedItem.ToString();
+            if (txt_Tuoi.Text.Equals(""))
+            {
+                
+            }
+            else
+            {
+                string selectedValue = txt_Tuoi.Text;
+                string[] arr = selectedValue.Split(' ');
+                int tuoi = int.Parse(arr[0]);
 
+                string selectedValue1 = comboBox_GioiTinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue1, tuoi);
 
-            // Xác định sao
-
-            tinhSaoNam(selectedValue1, tuoi);
+            }
         }
 
         private void comboBox_NamSinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             int namHienTai = 2023;
+            int currentYear = DateTime.Now.Year;
             string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
 
             string[] arr = selectedValue.Split(' ');
             int nam = int.Parse(arr[0]);
-            int tuoi = namHienTai - nam;
+            int tuoi = currentYear - nam;
             txt_Tuoi.Text = tuoi.ToString() + " tuổi";
+
+            if (txt_Tuoi.Text.Equals("") || comboBox_GioiTinh.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string selectedValue1 = txt_Tuoi.Text;
+                string[] arr1 = selectedValue.Split(' ');
+                int tuoi1 = int.Parse(arr[0]);
+
+                string selectedValue11 = comboBox_GioiTinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue11, tuoi);
+            }
+
         }
     }
     }

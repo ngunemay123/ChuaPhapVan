@@ -304,9 +304,9 @@ namespace VanPhap.View
             // In kết quả
             // txt_tuoi.Text = canChi;
 
-           
+            int currentYear = DateTime.Now.Year;
             List<string> cuong = new List<string>();
-            for (int i = 1900; i < 2023; i++)
+            for (int i = 1900; i < currentYear; i++)
             {
                 int canIndex = (i - 4) % 10;
                 int chiIndex = (i - 4) % 12;
@@ -360,10 +360,65 @@ namespace VanPhap.View
                         string query = "INSERT INTO tblPhatTu (ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni)  VALUES (?,?,?,?,?)";
                         double id = double.Parse(txt_id1.Text) + 1;
                         txt_id1.Text = id.ToString();
-                        string hoten = txt_name.Text;
-                        string phapdanh = txt_nickname.Text;
-                        string diachi = txt_diachi.Text;
-                        string nguyenquan = txt_nguyenquan.Text;
+                        ////
+                        //////////////////////////////
+                        string inputName = txt_name.Text;
+                        string[] words = inputName.Split(' ');
+
+                        for (int i = 0; i < words.Length; i++)
+                        {
+                            if (!string.IsNullOrWhiteSpace(words[i]))
+                            {
+                                words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+                            }
+                        }
+
+                        string hoten = string.Join(" ", words);
+
+                        ////////////////////////////////////
+                        string inputPhapDanh = txt_nickname.Text;
+                        string[] words1 = inputPhapDanh.Split(' ');
+
+                        for (int i = 0; i < words1.Length; i++)
+                        {
+                            if (!string.IsNullOrWhiteSpace(words1[i]))
+                            {
+                                words1[i] = char.ToUpper(words1[i][0]) + words1[i].Substring(1);
+                            }
+                        }
+
+                        string phapdanh = string.Join(" ", words1);
+
+                        ///
+                        //////////////////////////////////////
+                        string inputDiaChi = txt_diachi.Text;
+                        string[] words2 = inputDiaChi.Split(' ');
+
+                        for (int i = 0; i < words2.Length; i++)
+                        {
+                            if (!string.IsNullOrWhiteSpace(words2[i]))
+                            {
+                                words2[i] = char.ToUpper(words2[i][0]) + words2[i].Substring(1);
+                            }
+                        }
+
+                        string diachi = string.Join(" ", words2);
+                        /////////////////////////////////////////////
+                        ///
+                        string inputNguyenQuan = txt_nguyenquan.Text;
+                        string[] words3 = inputNguyenQuan.Split(' ');
+
+                        for (int i = 0; i < words3.Length; i++)
+                        {
+                            if (!string.IsNullOrWhiteSpace(words3[i]))
+                            {
+                                words3[i] = char.ToUpper(words3[i][0]) + words3[i].Substring(1);
+                            }
+                        }
+
+                        string nguyenquan = string.Join(" ", words3);
+
+                       
                         //double namsinh = double.Parse(txt_birthday1.Text);
 
                         // Tạo đối tượng Command và liên kết với Connection
@@ -451,13 +506,28 @@ namespace VanPhap.View
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int namHienTai = 2023;
+            int currentYear = DateTime.Now.Year;
+            
             string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
 
             string[] arr = selectedValue.Split(' ');
             int nam = int.Parse(arr[0]);
-            int tuoi = namHienTai - nam;
+            int tuoi = currentYear - nam;
             txt_Tuoi.Text = tuoi.ToString() + " tuổi";
+
+            if (txt_Tuoi.Text.Equals("") || comboBox_GioiTinh.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string selectedValue1 = txt_Tuoi.Text;
+                string[] arr1 = selectedValue.Split(' ');
+                int tuoi1 = int.Parse(arr[0]);
+
+                string selectedValue11 = comboBox_GioiTinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue11, tuoi);
+            }
         }
 
         private void lbl_NamSinh_Click(object sender, EventArgs e)
@@ -472,15 +542,25 @@ namespace VanPhap.View
 
         private void comboBox_GioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = txt_Tuoi.Text;
-            string[] arr = selectedValue.Split(' ');
-            int tuoi = int.Parse(arr[0]);
-            string selectedValue1 = comboBox_GioiTinh.SelectedItem.ToString();
+            if(txt_Tuoi.Text.Equals(""))
+            {
+               
+            }
+            else
+            {
+                string selectedValue = txt_Tuoi.Text;
+                string[] arr = selectedValue.Split(' ');
+                int tuoi = int.Parse(arr[0]);
+
+                string selectedValue1 = comboBox_GioiTinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue1, tuoi);
+
+            }
 
 
             // Xác định sao
 
-            tinhSaoNam(selectedValue1, tuoi);
+           
         }
     }
     }

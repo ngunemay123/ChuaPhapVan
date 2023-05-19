@@ -94,7 +94,7 @@ namespace VanPhap.View
             txt_nguyenquan.Text = nguyenquan;
 
             string idso = txt_idchubai.Text;
-            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,Sao from tblchitietso where idso = @idso AND NamMat IS NULL ";
+            string query = "select ID, IDSo, HoTenUni, PhapDanhUni, NamNu,NamSinh,Sao from tblchitietso where idso = @idso AND NamMat IS NULL ORDER BY ID ASC ";
             //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
 
 
@@ -682,6 +682,11 @@ namespace VanPhap.View
             tcb.nguyenquan = nguyenquann;
             tcb.name = namee;
             tcb.Show();
+
+        }
+
+        private void lsv_danhsach_cauan_ItemActivate(object sender, EventArgs e)
+        {
 
         }
     }

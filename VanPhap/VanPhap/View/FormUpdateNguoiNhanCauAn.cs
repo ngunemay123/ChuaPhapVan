@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.ExtendedProperties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -417,7 +418,7 @@ namespace VanPhap.View
 
             if (lsv_danhsach_cauan.SelectedItems.Count > 0)
             {
-                // Lấy giá trị khóa chính từ dòng đang chọn
+                // Lấy giá trị khóa chính từ dòng đang chọn 
 
                 string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[6].Text; // Giả sử khóa chính ở cột đầu tiên
                 string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[7].Text;
@@ -437,8 +438,34 @@ namespace VanPhap.View
                     string[] arr = selectedValue.Split(' ');
                     double namsinh = double.Parse(arr[0]);
                     string sao = txt_sao.Text;
-                    string hoten = txt_name.Text;
-                    string phapdanh = txt_nickname.Text;
+
+                string inputName = txt_name.Text;
+                string[] words = inputName.Split(' ');
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words[i]))
+                    {
+                        words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+                    }
+                }
+
+                string hoten = string.Join(" ", words);
+                ///////////////////
+                string inputPhapDanh = txt_name.Text;
+                string[] words1 = inputPhapDanh.Split(' ');
+
+                for (int i = 0; i < words1.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words1[i]))
+                    {
+                        words1[i] = char.ToUpper(words1[i][0]) + words1[i].Substring(1);
+                    }
+                }
+
+                string phapdanh = string.Join(" ", words1);
+
+               
                     using (OleDbConnection connection = new OleDbConnection(strCon))
                     {
                         using (OleDbCommand command = new OleDbCommand(query, connection))
@@ -471,7 +498,7 @@ namespace VanPhap.View
             txt_tuoi.Text = "";
             txt_sao.Text = "";
             HienDanhSach();
-            SoCauAn form2 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+            SoCauAn form2 = System.Windows.Forms.Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
             form2.HienDanhSach();
         }//Dong if
     
@@ -481,25 +508,31 @@ namespace VanPhap.View
         private void comboBox_NamSinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             int namHienTai = 2023;
+            int currentYear = DateTime.Now.Year;
             string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
 
             string[] arr = selectedValue.Split(' ');
             int nam = int.Parse(arr[0]);
-            int tuoi = namHienTai - nam;
+            int tuoi = currentYear - nam;
             txt_tuoi.Text = tuoi.ToString() + " tuổi";
         }
 
         private void comboBox_gioitinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = txt_tuoi.Text;
-            string[] arr = selectedValue.Split(' ');
-            int tuoi = int.Parse(arr[0]);
-            string selectedValue1 = comboBox_gioitinh.SelectedItem.ToString();
+            if (txt_tuoi.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng nhập năm sinh trước");
+            }
+            else
+            {
+                string selectedValue = txt_tuoi.Text;
+                string[] arr = selectedValue.Split(' ');
+                int tuoi = int.Parse(arr[0]);
 
+                string selectedValue1 = comboBox_gioitinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue1, tuoi);
 
-            // Xác định sao
-
-            tinhSaoNam(selectedValue1, tuoi);
+            }
         }
 
         private void txt_gioitinh_TextChanged(object sender, EventArgs e)
@@ -516,6 +549,20 @@ namespace VanPhap.View
             int nam = int.Parse(arr[0]);
             int tuoi = namHienTai - nam;
             txt_tuoi.Text = tuoi.ToString() + " tuổi";
+
+            if (txt_tuoi.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string selectedValue1 = txt_tuoi.Text;
+                string[] arr1 = selectedValue.Split(' ');
+                int tuoi1 = int.Parse(arr[0]);
+
+                string selectedValue11 = comboBox_NamSinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue11, tuoi);
+            }
         }
 
         private void comboBox_gioitinh_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -529,6 +576,19 @@ namespace VanPhap.View
             // Xác định sao
 
             tinhSaoNam(selectedValue1, tuoi);
+            if (txt_tuoi.Text.Equals("") || comboBox_gioitinh.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string selectedValue2 = txt_tuoi.Text;
+                string[] arr1 = selectedValue2.Split(' ');
+                int tuoi1 = int.Parse(arr[0]);
+
+                string selectedValue11 = comboBox_gioitinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue11, tuoi);
+            }
         }
     }
 }

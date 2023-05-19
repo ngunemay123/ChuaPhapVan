@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_idchubai = new System.Windows.Forms.TextBox();
             this.lbl_diachi = new System.Windows.Forms.Label();
             this.txt_nguyenquan = new System.Windows.Forms.TextBox();
             this.txt_diachi = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_xacnhan = new System.Windows.Forms.Button();
-            this.txt_idchubai = new System.Windows.Forms.TextBox();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,11 +65,25 @@
             this.pnl_Form.Controls.Add(this.lbl_NickName);
             this.pnl_Form.Controls.Add(this.txt_nickname);
             this.pnl_Form.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_Form.Location = new System.Drawing.Point(13, 13);
+            this.pnl_Form.Location = new System.Drawing.Point(12, 3);
             this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1213, 251);
             this.pnl_Form.TabIndex = 32;
+            // 
+            // txt_idchubai
+            // 
+            this.txt_idchubai.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_idchubai.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idchubai.Location = new System.Drawing.Point(243, 13);
+            this.txt_idchubai.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_idchubai.Name = "txt_idchubai";
+            this.txt_idchubai.ReadOnly = true;
+            this.txt_idchubai.Size = new System.Drawing.Size(127, 42);
+            this.txt_idchubai.TabIndex = 108;
+            this.txt_idchubai.TabStop = false;
+            this.txt_idchubai.Visible = false;
             // 
             // lbl_diachi
             // 
@@ -199,7 +213,7 @@
             this.lsv_danhsach_cauan.FullRowSelect = true;
             this.lsv_danhsach_cauan.GridLines = true;
             this.lsv_danhsach_cauan.HideSelection = false;
-            this.lsv_danhsach_cauan.Location = new System.Drawing.Point(12, 270);
+            this.lsv_danhsach_cauan.Location = new System.Drawing.Point(12, 260);
             this.lsv_danhsach_cauan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsv_danhsach_cauan.Name = "lsv_danhsach_cauan";
             this.lsv_danhsach_cauan.Size = new System.Drawing.Size(1213, 354);
@@ -259,7 +273,7 @@
             this.btn_xacnhan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xacnhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xacnhan.ImageKey = "add-icon.png";
-            this.btn_xacnhan.Location = new System.Drawing.Point(1230, 215);
+            this.btn_xacnhan.Location = new System.Drawing.Point(1229, 205);
             this.btn_xacnhan.Margin = new System.Windows.Forms.Padding(0);
             this.btn_xacnhan.Name = "btn_xacnhan";
             this.btn_xacnhan.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
@@ -270,19 +284,6 @@
             this.btn_xacnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xacnhan.UseVisualStyleBackColor = true;
             this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
-            // 
-            // txt_idchubai
-            // 
-            this.txt_idchubai.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_idchubai.Cursor = System.Windows.Forms.Cursors.No;
-            this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idchubai.Location = new System.Drawing.Point(243, 13);
-            this.txt_idchubai.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_idchubai.Name = "txt_idchubai";
-            this.txt_idchubai.ReadOnly = true;
-            this.txt_idchubai.Size = new System.Drawing.Size(127, 42);
-            this.txt_idchubai.TabIndex = 108;
-            this.txt_idchubai.TabStop = false;
             // 
             // FormXemTruoc
             // 

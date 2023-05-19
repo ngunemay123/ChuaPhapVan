@@ -139,6 +139,7 @@
             this.lsv_danhsach_cauan.TabIndex = 103;
             this.lsv_danhsach_cauan.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_cauan.View = System.Windows.Forms.View.Details;
+            this.lsv_danhsach_cauan.ItemActivate += new System.EventHandler(this.lsv_danhsach_cauan_ItemActivate);
             this.lsv_danhsach_cauan.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
@@ -276,6 +277,7 @@
             this.txt_id.TabIndex = 30;
             this.txt_id.TabStop = false;
             this.txt_id.Text = " ";
+            this.txt_id.Visible = false;
             // 
             // txt_idchubai
             // 
@@ -286,6 +288,7 @@
             this.txt_idchubai.Size = new System.Drawing.Size(127, 42);
             this.txt_idchubai.TabIndex = 31;
             this.txt_idchubai.TabStop = false;
+            this.txt_idchubai.Visible = false;
             // 
             // txt_loaiso
             // 
@@ -297,6 +300,7 @@
             this.txt_loaiso.Size = new System.Drawing.Size(127, 42);
             this.txt_loaiso.TabIndex = 101;
             this.txt_loaiso.TabStop = false;
+            this.txt_loaiso.Visible = false;
             // 
             // pnl_Form
             // 
@@ -399,13 +403,13 @@
             this.btn_ThemSo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ThemSo.ImageIndex = 0;
             this.btn_ThemSo.ImageList = this.imageList1;
-            this.btn_ThemSo.Location = new System.Drawing.Point(1243, 70);
+            this.btn_ThemSo.Location = new System.Drawing.Point(879, 10);
             this.btn_ThemSo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ThemSo.Name = "btn_ThemSo";
             this.btn_ThemSo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btn_ThemSo.Size = new System.Drawing.Size(173, 49);
             this.btn_ThemSo.TabIndex = 1;
-            this.btn_ThemSo.Text = "Thêm sổ";
+            this.btn_ThemSo.Text = "Thêm sớ";
             this.btn_ThemSo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ThemSo.UseVisualStyleBackColor = true;
             this.btn_ThemSo.Click += new System.EventHandler(this.btn_ThemSo_Click);
@@ -417,13 +421,13 @@
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.ImageIndex = 4;
             this.button3.ImageList = this.imageList1;
-            this.button3.Location = new System.Drawing.Point(1243, 128);
+            this.button3.Location = new System.Drawing.Point(1056, 10);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(173, 49);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Tìm sổ";
+            this.button3.Text = "Tìm sớ";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -511,7 +515,7 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.ImageIndex = 3;
             this.button1.ImageList = this.imageList1;
-            this.button1.Location = new System.Drawing.Point(1243, 181);
+            this.button1.Location = new System.Drawing.Point(1209, 70);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);

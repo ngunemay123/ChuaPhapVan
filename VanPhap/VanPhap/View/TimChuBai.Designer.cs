@@ -71,7 +71,7 @@
             this.pnl_List.Controls.Add(this.btn_Add);
             this.pnl_List.Controls.Add(this.btn_Delete);
             this.pnl_List.Location = new System.Drawing.Point(16, 338);
-            this.pnl_List.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_List.Name = "pnl_List";
             this.pnl_List.Size = new System.Drawing.Size(1432, 328);
             this.pnl_List.TabIndex = 30;
@@ -97,8 +97,7 @@
             this.lsv_timchubai.TabStop = false;
             this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
             this.lsv_timchubai.View = System.Windows.Forms.View.Details;
-            this.lsv_timchubai.ItemActivate += new System.EventHandler(this.lsv_timchubai_ItemActivate);
-            this.lsv_timchubai.SelectedIndexChanged += new System.EventHandler(this.lsv_timchubai_SelectedIndexChanged);
+            this.lsv_timchubai.ItemActivate += new System.EventHandler(this.lsv_timchubai_ItemActivate_1);
             // 
             // columnHeader1
             // 
@@ -134,7 +133,7 @@
             this.dgv_list.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_list.Location = new System.Drawing.Point(-3, -2);
-            this.dgv_list.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_list.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.RowHeadersWidth = 51;
             this.dgv_list.Size = new System.Drawing.Size(1433, 329);
@@ -145,7 +144,7 @@
             this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.ImageIndex = 1;
             this.btn_Update.Location = new System.Drawing.Point(373, 292);
-            this.btn_Update.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(100, 42);
             this.btn_Update.TabIndex = 21;
@@ -174,7 +173,7 @@
             this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ImageIndex = 2;
             this.btn_Delete.Location = new System.Drawing.Point(481, 292);
-            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(100, 42);
             this.btn_Delete.TabIndex = 20;
@@ -264,7 +263,7 @@
             this.pnl_Form.Controls.Add(this.txt_nickname);
             this.pnl_Form.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_Form.Location = new System.Drawing.Point(16, 30);
-            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Form.Name = "pnl_Form";
             this.pnl_Form.Size = new System.Drawing.Size(1199, 251);
             this.pnl_Form.TabIndex = 302;
@@ -285,7 +284,7 @@
             // 
             this.txt_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nguyenquan.Location = new System.Drawing.Point(645, 162);
-            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(537, 42);
             this.txt_nguyenquan.TabIndex = 4;
@@ -294,7 +293,7 @@
             // 
             this.txt_diachi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_diachi.Location = new System.Drawing.Point(645, 59);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(537, 42);
             this.txt_diachi.TabIndex = 3;
@@ -329,7 +328,7 @@
             this.txt_name.BackColor = System.Drawing.SystemColors.Window;
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(33, 59);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(531, 42);
             this.txt_name.TabIndex = 1;
@@ -350,7 +349,7 @@
             // 
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nickname.Location = new System.Drawing.Point(33, 162);
-            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(531, 42);
             this.txt_nickname.TabIndex = 2;
@@ -367,11 +366,11 @@
             this.Controls.Add(this.btn_tim_kiem);
             this.Controls.Add(this.pnl_List);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TimChuBai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimChuBai";
-            this.Load += new System.EventHandler(this.TimChuBai_Load);
+            this.Load += new System.EventHandler(this.TimChuBai_Load_1);
             this.pnl_List.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
             this.pnl_Form.ResumeLayout(false);

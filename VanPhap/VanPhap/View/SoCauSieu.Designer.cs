@@ -391,6 +391,7 @@
             this.lsv_danhsach_causieu.TabIndex = 103;
             this.lsv_danhsach_causieu.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_causieu.View = System.Windows.Forms.View.Details;
+            this.lsv_danhsach_causieu.ItemActivate += new System.EventHandler(this.lsv_danhsach_causieu_ItemActivate);
             // 
             // Check
             // 
@@ -639,6 +640,7 @@
             this.Controls.Add(this.lbl_List);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            
             this.Text = "SoCauSieu";
             this.Load += new System.EventHandler(this.SoCauSieu_Load);
             this.pnl_Form.ResumeLayout(false);

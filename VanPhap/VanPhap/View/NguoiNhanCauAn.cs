@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.ExtendedProperties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -83,7 +84,7 @@ namespace VanPhap.View
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            double iddd =  double.Parse(txt_id_so.Text);
+             double iddd =  double.Parse(txt_id_so.Text);
             if (txt_name.Text.Equals(""))
             {
                 MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
@@ -124,8 +125,38 @@ namespace VanPhap.View
                     string[] arr = selectedValue.Split(' ');
                     double namsinh = double.Parse(arr[0]);
                     string sao = txt_sao.Text;
-                    string hoten = txt_name.Text;
-                    string phapdanh = txt_nickname.Text;
+
+                /////////////////////////
+                string inputHoten = txt_name.Text;
+                string[] words = inputHoten.Split(' ');
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words[i]))
+                    {
+                        words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
+                    }
+                }
+
+                string hoten = string.Join(" ", words);
+                ////////////////////////
+                
+                ///////////////////////
+                string inputPhapDanh = txt_nickname.Text;
+                string[] words1 = inputPhapDanh.Split(' ');
+
+                for (int i = 0; i < words1.Length; i++)
+                {
+                    if (!string.IsNullOrWhiteSpace(words1[i]))
+                    {
+                        words1[i] = char.ToUpper(words1[i][0]) + words1[i].Substring(1);
+                    }
+                }
+
+                string phapdanh = string.Join(" ", words1);
+                /////////////////////
+
+               
                     string idso = txt_id_so.Text;
                     double id = double.Parse(txt_id.Text)+1;
        
@@ -162,7 +193,7 @@ namespace VanPhap.View
             txt_Tuoi.Text = "";
             txt_sao.Text = "";
             this.Close();
-            SoCauAn form2 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
+            SoCauAn form2 = System.Windows.Forms.Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
             form2.HienDanhSach();
             form2.Show();
         }
@@ -439,27 +470,46 @@ namespace VanPhap.View
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int namHienTai = 2023;
+            int currentYear = DateTime.Now.Year;
             string selectedValue = comboBox_namsinh.SelectedItem.ToString();
 
             string[] arr = selectedValue.Split(' ');
             int nam = int.Parse(arr[0]);
-            int tuoi = namHienTai - nam;
+            int tuoi = currentYear - nam;
             txt_Tuoi.Text = tuoi.ToString()+ " tuổi";
-            
+
+            if (txt_Tuoi.Text.Equals("") || cbb_gioitinh.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string selectedValue1 = txt_Tuoi.Text;
+                string[] arr1 = selectedValue.Split(' ');
+                int tuoi1 = int.Parse(arr[0]);
+
+                string selectedValue11 = cbb_gioitinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue11, tuoi);
+            }
+
         }
 
         private void cbb_gioitinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedValue = txt_Tuoi.Text;
-            string[] arr = selectedValue.Split(' ');
-            int tuoi = int.Parse(arr[0]);
-            string selectedValue1 = cbb_gioitinh.SelectedItem.ToString();
-            
+            if (txt_Tuoi.Text.Equals(""))
+            {
+                
+            }
+            else
+            {
+                string selectedValue = txt_Tuoi.Text;
+                string[] arr = selectedValue.Split(' ');
+                int tuoi = int.Parse(arr[0]);
 
-            // Xác định sao
+                string selectedValue1 = cbb_gioitinh.SelectedItem.ToString();
+                tinhSaoNam(selectedValue1, tuoi);
 
-            tinhSaoNam(selectedValue1,tuoi);
-            
+            }
         }
 
         private void NguoiNhanCauAn_Load_1(object sender, EventArgs e)
