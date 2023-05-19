@@ -35,6 +35,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,7 +63,6 @@
             this.txt_update = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btn_xacnhan = new System.Windows.Forms.Button();
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_Form.SuspendLayout();
             this.pnl_list.SuspendLayout();
             this.SuspendLayout();
@@ -115,6 +115,11 @@
             this.columnHeader4.Text = "Năm sinh";
             this.columnHeader4.Width = 143;
             // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tuổi";
+            this.columnHeader5.Width = 103;
+            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Sao";
@@ -158,6 +163,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(300, 42);
             this.txt_name.TabIndex = 1;
+            this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_nickname
             // 
@@ -167,6 +173,7 @@
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(300, 42);
             this.txt_nickname.TabIndex = 2;
+            this.txt_nickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_NickName
             // 
@@ -216,6 +223,7 @@
             this.txt_tuoi.Size = new System.Drawing.Size(300, 42);
             this.txt_tuoi.TabIndex = 4;
             this.txt_tuoi.TabStop = false;
+            this.txt_tuoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_Sao
             // 
@@ -265,6 +273,7 @@
             this.txt_sao.Size = new System.Drawing.Size(300, 42);
             this.txt_sao.TabIndex = 5;
             this.txt_sao.TabStop = false;
+            this.txt_sao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_idchubai
             // 
@@ -340,6 +349,7 @@
             this.comboBox_NamSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_NamSinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_NamSinh.FormattingEnabled = true;
+            this.comboBox_NamSinh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBox_NamSinh.Location = new System.Drawing.Point(172, 129);
             this.comboBox_NamSinh.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_NamSinh.Name = "comboBox_NamSinh";
@@ -443,12 +453,6 @@
             this.btn_xacnhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xacnhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xacnhan.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.DisplayIndex = 4;
-            this.columnHeader5.Text = "Tuổi";
-            this.columnHeader5.Width = 103;
             // 
             // FormUpdateNguoiNhanCauAn
             // 

@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUpdateChuBai));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pnl_Form = new System.Windows.Forms.Panel();
+            this.txt_name_kiemtra = new System.Windows.Forms.TextBox();
             this.txt_sao = new System.Windows.Forms.TextBox();
             this.txt_gioi_tinh = new System.Windows.Forms.TextBox();
             this.txt_gioitinh_1 = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@
             this.lbl_NickName = new System.Windows.Forms.Label();
             this.txt_nickname = new System.Windows.Forms.TextBox();
             this.btn_update = new System.Windows.Forms.Button();
-            this.txt_name_kiemtra = new System.Windows.Forms.TextBox();
             this.pnl_Form.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,6 +102,17 @@
             this.pnl_Form.Size = new System.Drawing.Size(1004, 352);
             this.pnl_Form.TabIndex = 68;
             // 
+            // txt_name_kiemtra
+            // 
+            this.txt_name_kiemtra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_name_kiemtra.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name_kiemtra.Location = new System.Drawing.Point(193, 0);
+            this.txt_name_kiemtra.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_name_kiemtra.Name = "txt_name_kiemtra";
+            this.txt_name_kiemtra.Size = new System.Drawing.Size(300, 42);
+            this.txt_name_kiemtra.TabIndex = 48;
+            this.txt_name_kiemtra.Visible = false;
+            // 
             // txt_sao
             // 
             this.txt_sao.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -111,6 +122,7 @@
             this.txt_sao.Name = "txt_sao";
             this.txt_sao.Size = new System.Drawing.Size(216, 42);
             this.txt_sao.TabIndex = 47;
+            this.txt_sao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_gioi_tinh
             // 
@@ -177,6 +189,7 @@
             this.txt_Tuoi.Size = new System.Drawing.Size(216, 42);
             this.txt_Tuoi.TabIndex = 41;
             this.txt_Tuoi.TabStop = false;
+            this.txt_Tuoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox_NamSinh
             // 
@@ -188,7 +201,7 @@
             this.comboBox_NamSinh.Location = new System.Drawing.Point(708, 50);
             this.comboBox_NamSinh.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_NamSinh.Name = "comboBox_NamSinh";
-            this.comboBox_NamSinh.Size = new System.Drawing.Size(216, 42);
+            this.comboBox_NamSinh.Size = new System.Drawing.Size(269, 42);
             this.comboBox_NamSinh.TabIndex = 4;
             this.comboBox_NamSinh.SelectedIndexChanged += new System.EventHandler(this.comboBox_NamSinh_SelectedIndexChanged);
             // 
@@ -282,6 +295,7 @@
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(300, 42);
             this.txt_nguyenquan.TabIndex = 3;
+            this.txt_nguyenquan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_diachi
             // 
@@ -315,6 +329,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(300, 42);
             this.txt_name.TabIndex = 1;
+            this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_id
             // 
@@ -349,6 +364,7 @@
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(300, 42);
             this.txt_nickname.TabIndex = 2;
+            this.txt_nickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_update
             // 
@@ -367,17 +383,6 @@
             this.btn_update.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // txt_name_kiemtra
-            // 
-            this.txt_name_kiemtra.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_name_kiemtra.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name_kiemtra.Location = new System.Drawing.Point(193, 0);
-            this.txt_name_kiemtra.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_name_kiemtra.Name = "txt_name_kiemtra";
-            this.txt_name_kiemtra.Size = new System.Drawing.Size(300, 42);
-            this.txt_name_kiemtra.TabIndex = 48;
-            this.txt_name_kiemtra.Visible = false;
             // 
             // FormUpdateChuBai
             // 

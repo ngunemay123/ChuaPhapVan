@@ -87,6 +87,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(300, 42);
             this.txt_name.TabIndex = 1;
+            this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
             // txt_sao
@@ -101,6 +102,7 @@
             this.txt_sao.Size = new System.Drawing.Size(305, 42);
             this.txt_sao.TabIndex = 5;
             this.txt_sao.TabStop = false;
+            this.txt_sao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbl_sex
             // 
@@ -171,6 +173,7 @@
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(300, 42);
             this.txt_nickname.TabIndex = 2;
+            this.txt_nickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // imageList1
             // 
@@ -274,6 +277,7 @@
             this.txt_Tuoi.Size = new System.Drawing.Size(305, 42);
             this.txt_Tuoi.TabIndex = 43;
             this.txt_Tuoi.TabStop = false;
+            this.txt_Tuoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_tuoiii
             // 

@@ -689,5 +689,54 @@ namespace VanPhap.View
         {
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            MoveSelectedItemUp();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MoveSelectedItemDown();
+        }
+        private void MoveSelectedItemUp()
+        {
+            if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
+                int currentIndex = selectedItem.Index;
+
+                // Kiểm tra xem mục đã ở đầu danh sách chưa
+                if (currentIndex > 0)
+                {
+                    // Di chuyển mục lên trên
+                    lsv_danhsach_cauan.Items.RemoveAt(currentIndex);
+                    lsv_danhsach_cauan.Items.Insert(currentIndex - 1, selectedItem);
+                    lsv_danhsach_cauan.Items[currentIndex - 1].Selected = true;
+                    lsv_danhsach_cauan.Focus();
+                }
+            }
+        }
+
+        private void MoveSelectedItemDown()
+        {
+            if (lsv_danhsach_cauan.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lsv_danhsach_cauan.SelectedItems[0];
+                int currentIndex = selectedItem.Index;
+                int lastIndex = lsv_danhsach_cauan.Items.Count - 1;
+
+                // Kiểm tra xem mục đã ở cuối danh sách chưa
+                if (currentIndex < lastIndex)
+                {
+                    // Di chuyển mục xuống dưới
+                    lsv_danhsach_cauan.Items.RemoveAt(currentIndex);
+                    lsv_danhsach_cauan.Items.Insert(currentIndex + 1, selectedItem);
+                    lsv_danhsach_cauan.Items[currentIndex + 1].Selected = true;
+                    lsv_danhsach_cauan.Focus();
+                }
+            }
+        }
+
     }
 }
