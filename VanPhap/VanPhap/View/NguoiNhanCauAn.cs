@@ -15,7 +15,7 @@ namespace VanPhap.View
 {
     public partial class NguoiNhanCauAn : Form
     {
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Git\\ChuaPhapVan\\VanPhap\\VanPhap\\bin\\Debug\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Z:\\Demo.accdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
 
