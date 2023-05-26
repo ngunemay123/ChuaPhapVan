@@ -134,6 +134,7 @@ namespace VanPhap.View
 
 
                 }
+                connection.Close();
             }
         }
 
@@ -148,7 +149,7 @@ namespace VanPhap.View
 
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                //MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
                 
             }
             else
@@ -201,7 +202,7 @@ namespace VanPhap.View
 
         private void btn_Add_MouseHover(object sender, EventArgs e)
         {
-            btn_Add.ForeColor = System.Drawing.Color.Red;
+            //btn_Add.ForeColor = System.Drawing.Color.Red;
         }
 
         private void btn_Add_MouseLeave(object sender, EventArgs e)
@@ -267,7 +268,7 @@ namespace VanPhap.View
         {
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                //MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
             }
             else
             {
@@ -281,7 +282,7 @@ namespace VanPhap.View
         {
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                //MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
 
             }
             else
@@ -319,6 +320,7 @@ namespace VanPhap.View
                             // Không có dòng nào được xóa
                             MessageBox.Show("Không có dòng nào được xóa");
                         }
+                        connection.Close();
                     }
                 }//Dong if
                 else
@@ -334,7 +336,7 @@ namespace VanPhap.View
         {
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                //MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
             }
             else
             {
@@ -659,7 +661,6 @@ namespace VanPhap.View
         private void btn_ThemSo_Click(object sender, EventArgs e)
         {
             ChuBai cb = new ChuBai();
-            
             cb.Show();
         }
 
@@ -675,13 +676,21 @@ namespace VanPhap.View
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            string nguyenquann = txt_nguyenquan.Text;
-            string namee = txt_name.Text;
-            FormUpdateChuBai tcb = new FormUpdateChuBai();
-            tcb.idso = id; ;
-            tcb.nguyenquan = nguyenquann;
-            tcb.name = namee;
-            tcb.Show();
+            if(txt_name.Text.Equals(""))
+            {
+
+            }
+            else
+            {
+                string nguyenquann = txt_nguyenquan.Text;
+                string namee = txt_name.Text;
+                FormUpdateChuBai tcb = new FormUpdateChuBai();
+                tcb.idso = id; ;
+                tcb.nguyenquan = nguyenquann;
+                tcb.name = namee;
+                tcb.Show();
+            }
+            
 
         }
 
@@ -738,5 +747,9 @@ namespace VanPhap.View
             }
         }
 
+        private void SoCauAn_Shown(object sender, EventArgs e)
+        {
+            btn_ThemSo.Focus();
+        }
     }
 }

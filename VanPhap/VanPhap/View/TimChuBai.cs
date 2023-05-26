@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -115,9 +116,10 @@ namespace VanPhap.View
                                 // Không có dòng nào được xóa
                                 MessageBox.Show("Không có dòng nào được xóa");
                             }
-                            
+                            connection.Close();
                         }
                     }//Dong if
+
                     else
                     {
                         MessageBox.Show("Vui lòng chọn một người bên dưới để xóa!");
@@ -145,7 +147,7 @@ namespace VanPhap.View
 
             if (txt_name.Text.Equals("") && txt_diachi.Text.Equals("") && txt_nguyenquan.Text.Equals(""))
             {
-                MessageBox.Show("Vui lòng tìm kiếm theo các cách sau\nNhập tên chủ bái || Nhập địa chỉ cần tìm || Nhập nguyên quán");
+                //MessageBox.Show("Vui lòng tìm kiếm theo các cách sau\nNhập tên chủ bái || Nhập địa chỉ cần tìm || Nhập nguyên quán");
             }
             else
             {
@@ -184,6 +186,7 @@ namespace VanPhap.View
 
                     lsv_timchubai.Items.Add(lvi);
                 }
+                CloseConection();
             }
         }
 
@@ -408,6 +411,34 @@ namespace VanPhap.View
                 // Hiển thị Form 2
                 /*form2.Show();*/
             }
+        }
+
+        private void TimChuBai_Shown(object sender, EventArgs e)
+        {
+            txt_name.Focus();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txt_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btn_tim_kiem_Click(sender, e);
+            }
+        }
+
+        private void TimChuBai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btn_reload_Click(object sender, EventArgs e)
+        {
+            HienDanhSach();
         }
     }
 }

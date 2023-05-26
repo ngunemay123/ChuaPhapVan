@@ -354,11 +354,10 @@ namespace VanPhap.View
                         lvi.SubItems.Add(reader["IDSo"].ToString());
                         lsv_danhsach_cauan.Items.Add(lvi);
 
-                        
+
                     }
-
-
                 }
+                connection.Close();
             }
         }
 
@@ -423,21 +422,21 @@ namespace VanPhap.View
                 string id = lsv_danhsach_cauan.SelectedItems[0].SubItems[6].Text; // Giả sử khóa chính ở cột đầu tiên
                 string idso = lsv_danhsach_cauan.SelectedItems[0].SubItems[7].Text;
                 string query = "UPDATE tblchitietso SET HoTenUni = ?, PhapDanhUni = ?, NamNu = ?, NamSinh = ?, Sao = ? WHERE ID = ? AND IDSo = ?";
-                
-                
-                    if (comboBox_gioitinh.SelectedItem.Equals("Nam"))
-                    {
-                        txt_gioitinh.Text = "1";
-                    }
-                    else
-                    {
-                        txt_gioitinh.Text = "2";
-                    }
-                    double namnu = double.Parse(txt_gioitinh.Text);
-                    string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
-                    string[] arr = selectedValue.Split(' ');
-                    double namsinh = double.Parse(arr[0]);
-                    string sao = txt_sao.Text;
+
+
+                if (comboBox_gioitinh.SelectedItem.Equals("Nam"))
+                {
+                    txt_gioitinh.Text = "1";
+                }
+                else
+                {
+                    txt_gioitinh.Text = "2";
+                }
+                double namnu = double.Parse(txt_gioitinh.Text);
+                string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
+                string[] arr = selectedValue.Split(' ');
+                double namsinh = double.Parse(arr[0]);
+                string sao = txt_sao.Text;
 
                 string inputName = txt_name.Text;
                 string[] words = inputName.Split(' ');
@@ -465,45 +464,45 @@ namespace VanPhap.View
 
                 string phapdanh = string.Join(" ", words1);
 
-               
-                    using (OleDbConnection connection = new OleDbConnection(strCon))
+
+                using (OleDbConnection connection = new OleDbConnection(strCon))
+                {
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
-                        using (OleDbCommand command = new OleDbCommand(query, connection))
-                        {
 
-                            connection.Open();
-                            // Gán giá trị cho các tham số trong câu lệnh INSERT
+                        connection.Open();
+                        // Gán giá trị cho các tham số trong câu lệnh INSERT
 
-                            command.Parameters.AddWithValue("?", hoten);
-                            command.Parameters.AddWithValue("?", phapdanh);
-                            command.Parameters.AddWithValue("?", namnu);
-                            command.Parameters.AddWithValue("?", namsinh);
-                            command.Parameters.AddWithValue("?", sao);
-                            command.Parameters.AddWithValue("?", id);
-                            command.Parameters.AddWithValue("?", idso);
-                            // Thực thi câu lệnh INSERT
-                            int rowsAffected = command.ExecuteNonQuery();
-                            // Kiểm tra số dòng bị ảnh hưởng
+                        command.Parameters.AddWithValue("?", hoten);
+                        command.Parameters.AddWithValue("?", phapdanh);
+                        command.Parameters.AddWithValue("?", namnu);
+                        command.Parameters.AddWithValue("?", namsinh);
+                        command.Parameters.AddWithValue("?", sao);
+                        command.Parameters.AddWithValue("?", id);
+                        command.Parameters.AddWithValue("?", idso);
+                        // Thực thi câu lệnh INSERT
+                        int rowsAffected = command.ExecuteNonQuery();
+                        // Kiểm tra số dòng bị ảnh hưởng
+                        connection.Close();
+                    }
 
-                        }
-                    
                 }
-              
+
 
 
             }
             txt_name.Text = "";
             txt_nickname.Text = "";
-            
+
             txt_tuoi.Text = "";
             txt_sao.Text = "";
             HienDanhSach();
             SoCauAn form2 = System.Windows.Forms.Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
             form2.HienDanhSach();
         }//Dong if
-    
 
-      
+
+
 
         private void comboBox_NamSinh_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -589,6 +588,21 @@ namespace VanPhap.View
                 string selectedValue11 = comboBox_gioitinh.SelectedItem.ToString();
                 tinhSaoNam(selectedValue11, tuoi);
             }
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormUpdateNguoiNhanCauAn_Shown(object sender, EventArgs e)
+        {
+            txt_name.Focus();
+        }
+
+        private void btn_xacnhan_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

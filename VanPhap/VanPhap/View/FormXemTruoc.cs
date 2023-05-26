@@ -42,7 +42,8 @@ namespace VanPhap.View
 
         private void FormXemTruoc_Load(object sender, EventArgs e)
         {
-            HienDanhSach(); 
+            HienDanhSach();
+            MaximizeBox = false;
         }
         public void HienDanhSach()
         {
@@ -93,9 +94,8 @@ namespace VanPhap.View
 
                         lsv_danhsach_cauan.Items.Add(lvi);
                     }
-
-
                 }
+                connection.Close();
             }
         }
         public void UpdateData(string data)
@@ -126,6 +126,11 @@ namespace VanPhap.View
             form1.Show();
             this.Close();
 
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

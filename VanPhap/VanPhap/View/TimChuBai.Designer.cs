@@ -54,6 +54,8 @@
             this.txt_name = new System.Windows.Forms.TextBox();
             this.lbl_NickName = new System.Windows.Forms.Label();
             this.txt_nickname = new System.Windows.Forms.TextBox();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.btn_reload = new System.Windows.Forms.Button();
             this.pnl_List.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).BeginInit();
             this.pnl_Form.SuspendLayout();
@@ -70,10 +72,9 @@
             this.pnl_List.Controls.Add(this.btn_Update);
             this.pnl_List.Controls.Add(this.btn_Add);
             this.pnl_List.Controls.Add(this.btn_Delete);
-            this.pnl_List.Location = new System.Drawing.Point(16, 338);
-            this.pnl_List.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_List.Location = new System.Drawing.Point(12, 275);
             this.pnl_List.Name = "pnl_List";
-            this.pnl_List.Size = new System.Drawing.Size(1432, 328);
+            this.pnl_List.Size = new System.Drawing.Size(1075, 267);
             this.pnl_List.TabIndex = 30;
             // 
             // lsv_timchubai
@@ -90,9 +91,9 @@
             this.lsv_timchubai.GridLines = true;
             this.lsv_timchubai.HideSelection = false;
             this.lsv_timchubai.Location = new System.Drawing.Point(0, 0);
-            this.lsv_timchubai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lsv_timchubai.Margin = new System.Windows.Forms.Padding(2);
             this.lsv_timchubai.Name = "lsv_timchubai";
-            this.lsv_timchubai.Size = new System.Drawing.Size(1428, 324);
+            this.lsv_timchubai.Size = new System.Drawing.Size(1071, 263);
             this.lsv_timchubai.TabIndex = 0;
             this.lsv_timchubai.TabStop = false;
             this.lsv_timchubai.UseCompatibleStateImageBehavior = false;
@@ -132,41 +133,55 @@
             this.dgv_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_list.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_list.Location = new System.Drawing.Point(-3, -2);
-            this.dgv_list.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_list.Location = new System.Drawing.Point(-2, -94);
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.RowHeadersWidth = 51;
-            this.dgv_list.Size = new System.Drawing.Size(1433, 329);
+            this.dgv_list.Size = new System.Drawing.Size(1075, 359);
             this.dgv_list.TabIndex = 1;
-            
+            this.dgv_list.TabStop = false;
             // 
             // btn_Update
-            
+            // 
+            this.btn_Update.Location = new System.Drawing.Point(0, 0);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(56, 19);
+            this.btn_Update.TabIndex = 2;
+            this.btn_Update.TabStop = false;
             // 
             // btn_Add
             // 
-            
+            this.btn_Add.Location = new System.Drawing.Point(0, 0);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(56, 19);
+            this.btn_Add.TabIndex = 3;
+            this.btn_Add.TabStop = false;
             // 
             // btn_Delete
             // 
-           
+            this.btn_Delete.Location = new System.Drawing.Point(0, -40);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(300, 59);
+            this.btn_Delete.TabIndex = 4;
+            this.btn_Delete.TabStop = false;
             // 
             // btn_tim_kiem
             // 
             this.btn_tim_kiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_tim_kiem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_tim_kiem.FlatAppearance.BorderSize = 0;
             this.btn_tim_kiem.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tim_kiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tim_kiem.ImageIndex = 4;
-            this.btn_tim_kiem.ImageList = this.imageList1;
-            this.btn_tim_kiem.Location = new System.Drawing.Point(1237, 30);
+            this.btn_tim_kiem.Location = new System.Drawing.Point(928, 24);
             this.btn_tim_kiem.Margin = new System.Windows.Forms.Padding(0);
             this.btn_tim_kiem.Name = "btn_tim_kiem";
-            this.btn_tim_kiem.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_tim_kiem.Size = new System.Drawing.Size(200, 49);
+            this.btn_tim_kiem.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_tim_kiem.Size = new System.Drawing.Size(150, 40);
             this.btn_tim_kiem.TabIndex = 5;
             this.btn_tim_kiem.Text = "Tìm kiếm";
-            this.btn_tim_kiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_tim_kiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_tim_kiem.UseVisualStyleBackColor = true;
             this.btn_tim_kiem.Click += new System.EventHandler(this.btn_tim_kiem_Click);
@@ -189,19 +204,18 @@
             // btn_xoa
             // 
             this.btn_xoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_xoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_xoa.FlatAppearance.BorderSize = 0;
             this.btn_xoa.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xoa.ImageIndex = 8;
-            this.btn_xoa.ImageList = this.imageList1;
-            this.btn_xoa.Location = new System.Drawing.Point(1237, 86);
+            this.btn_xoa.Location = new System.Drawing.Point(928, 71);
             this.btn_xoa.Margin = new System.Windows.Forms.Padding(0);
             this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Padding = new System.Windows.Forms.Padding(7, 0, 0, 0);
-            this.btn_xoa.Size = new System.Drawing.Size(200, 49);
+            this.btn_xoa.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_xoa.Size = new System.Drawing.Size(150, 40);
             this.btn_xoa.TabIndex = 6;
             this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoa.UseVisualStyleBackColor = true;
             this.btn_xoa.Click += new System.EventHandler(this.button3_Click);
@@ -210,10 +224,9 @@
             // 
             this.lbl_DanhsachChuBai.AutoSize = true;
             this.lbl_DanhsachChuBai.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DanhsachChuBai.Location = new System.Drawing.Point(29, 294);
-            this.lbl_DanhsachChuBai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_DanhsachChuBai.Location = new System.Drawing.Point(21, 237);
             this.lbl_DanhsachChuBai.Name = "lbl_DanhsachChuBai";
-            this.lbl_DanhsachChuBai.Size = new System.Drawing.Size(286, 38);
+            this.lbl_DanhsachChuBai.Size = new System.Drawing.Size(230, 31);
             this.lbl_DanhsachChuBai.TabIndex = 301;
             this.lbl_DanhsachChuBai.Text = "Danh sách chủ bái";
             this.lbl_DanhsachChuBai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -231,133 +244,153 @@
             this.pnl_Form.Controls.Add(this.lbl_NickName);
             this.pnl_Form.Controls.Add(this.txt_nickname);
             this.pnl_Form.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_Form.Location = new System.Drawing.Point(15, 30);
-            this.pnl_Form.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_Form.Location = new System.Drawing.Point(11, 24);
             this.pnl_Form.Name = "pnl_Form";
-            this.pnl_Form.Size = new System.Drawing.Size(1213, 251);
+            this.pnl_Form.Size = new System.Drawing.Size(910, 204);
             this.pnl_Form.TabIndex = 302;
-            this.pnl_Form.TabStop = false;
             // 
             // lbl_diachi
             // 
-            this.lbl_diachi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_diachi.AutoSize = true;
             this.lbl_diachi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_diachi.Location = new System.Drawing.Point(112, 185);
-            this.lbl_diachi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_diachi.Location = new System.Drawing.Point(32, 154);
             this.lbl_diachi.Name = "lbl_diachi";
-            this.lbl_diachi.Size = new System.Drawing.Size(100, 34);
-            
+            this.lbl_diachi.Size = new System.Drawing.Size(81, 27);
+            this.lbl_diachi.TabIndex = 0;
             this.lbl_diachi.Text = "Địa chỉ";
             this.lbl_diachi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            
             // 
             // txt_nguyenquan
             // 
-            this.txt_nguyenquan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_nguyenquan.BackColor = System.Drawing.Color.White;
-            this.txt_nguyenquan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_nguyenquan.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nguyenquan.Location = new System.Drawing.Point(236, 127);
-            this.txt_nguyenquan.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nguyenquan.Location = new System.Drawing.Point(177, 104);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
-            this.txt_nguyenquan.Size = new System.Drawing.Size(531, 42);
+            this.txt_nguyenquan.Size = new System.Drawing.Size(696, 35);
             this.txt_nguyenquan.TabIndex = 3;
-            this.txt_nguyenquan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_diachi
             // 
-            this.txt_diachi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_diachi.BackColor = System.Drawing.Color.White;
-            this.txt_diachi.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_diachi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_diachi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_diachi.Location = new System.Drawing.Point(236, 177);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_diachi.Location = new System.Drawing.Point(177, 149);
             this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(926, 42);
+            this.txt_diachi.Size = new System.Drawing.Size(696, 35);
             this.txt_diachi.TabIndex = 4;
             // 
             // lbl_nguyenquan
             // 
-            this.lbl_nguyenquan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_nguyenquan.AutoSize = true;
             this.lbl_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nguyenquan.Location = new System.Drawing.Point(38, 135);
-            this.lbl_nguyenquan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_nguyenquan.Location = new System.Drawing.Point(32, 109);
             this.lbl_nguyenquan.Name = "lbl_nguyenquan";
-            this.lbl_nguyenquan.Size = new System.Drawing.Size(174, 34);
-           
+            this.lbl_nguyenquan.Size = new System.Drawing.Size(140, 27);
+            this.lbl_nguyenquan.TabIndex = 5;
             this.lbl_nguyenquan.Text = "Nguyên quán";
             this.lbl_nguyenquan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lbl_name
             // 
-            this.lbl_name.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_name.Location = new System.Drawing.Point(104, 35);
-            this.lbl_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_name.Location = new System.Drawing.Point(32, 20);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(108, 34);
-            
+            this.lbl_name.Size = new System.Drawing.Size(87, 27);
+            this.lbl_name.TabIndex = 6;
             this.lbl_name.Text = "Chủ bái";
             this.lbl_name.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txt_name
             // 
-            this.txt_name.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_name.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(236, 27);
-            this.txt_name.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_name.Location = new System.Drawing.Point(177, 15);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(531, 42);
+            this.txt_name.Size = new System.Drawing.Size(696, 35);
             this.txt_name.TabIndex = 1;
-            this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // lbl_NickName
             // 
-            this.lbl_NickName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_NickName.AutoSize = true;
             this.lbl_NickName.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NickName.Location = new System.Drawing.Point(71, 85);
-            this.lbl_NickName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_NickName.Location = new System.Drawing.Point(32, 64);
             this.lbl_NickName.Name = "lbl_NickName";
-            this.lbl_NickName.Size = new System.Drawing.Size(141, 34);
-            
+            this.lbl_NickName.Size = new System.Drawing.Size(114, 27);
+            this.lbl_NickName.TabIndex = 7;
             this.lbl_NickName.Text = "Pháp danh";
             this.lbl_NickName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txt_nickname
             // 
-            this.txt_nickname.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nickname.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txt_nickname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nickname.Location = new System.Drawing.Point(236, 77);
-            this.txt_nickname.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_nickname.Location = new System.Drawing.Point(177, 59);
             this.txt_nickname.Name = "txt_nickname";
-            this.txt_nickname.Size = new System.Drawing.Size(531, 42);
+            this.txt_nickname.Size = new System.Drawing.Size(696, 35);
             this.txt_nickname.TabIndex = 2;
-            this.txt_nickname.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_cancel.ImageIndex = 8;
+            this.btn_cancel.Location = new System.Drawing.Point(928, 188);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_cancel.Size = new System.Drawing.Size(150, 40);
+            this.btn_cancel.TabIndex = 7;
+            this.btn_cancel.Text = "Hủy bỏ";
+            this.btn_cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // btn_reload
+            // 
+            this.btn_reload.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_reload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reload.FlatAppearance.BorderSize = 0;
+            this.btn_reload.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_reload.ImageIndex = 8;
+            this.btn_reload.Location = new System.Drawing.Point(928, 121);
+            this.btn_reload.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_reload.Name = "btn_reload";
+            this.btn_reload.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_reload.Size = new System.Drawing.Size(150, 40);
+            this.btn_reload.TabIndex = 303;
+            this.btn_reload.Text = "Làm mới";
+            this.btn_reload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_reload.UseVisualStyleBackColor = true;
+            this.btn_reload.Click += new System.EventHandler(this.btn_reload_Click);
             // 
             // TimChuBai
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1460, 683);
+            this.ClientSize = new System.Drawing.Size(1095, 555);
+            this.Controls.Add(this.btn_reload);
+            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.pnl_Form);
             this.Controls.Add(this.lbl_DanhsachChuBai);
             this.Controls.Add(this.btn_xoa);
             this.Controls.Add(this.btn_tim_kiem);
             this.Controls.Add(this.pnl_List);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TimChuBai";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimChuBai";
             this.Load += new System.EventHandler(this.TimChuBai_Load_1);
+            this.Shown += new System.EventHandler(this.TimChuBai_Shown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TimChuBai_KeyPress);
             this.pnl_List.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list)).EndInit();
             this.pnl_Form.ResumeLayout(false);
@@ -392,5 +425,7 @@
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Label lbl_NickName;
         private System.Windows.Forms.TextBox txt_nickname;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Button btn_reload;
     }
 }

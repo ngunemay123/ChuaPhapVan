@@ -206,3 +206,5 @@ C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.exe
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.pdb
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormXemTruoc.resources
 C:\Git\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateChuBai.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormUpdateChuBai.resources
+E:\Projects\Pháp Vân\ChuaPhapVan\VanPhap\VanPhap\obj\Debug\VanPhap.View.FormXemTruoc.resources

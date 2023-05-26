@@ -119,6 +119,7 @@ namespace VanPhap.View
 
                     }
                 }
+                connection.Close();
             }
             string query1 = "Select DiaChiUni, NguyenQuanUni from tblphattu  where id = @idso";
             using (OleDbConnection connection = new OleDbConnection(strCon))
@@ -138,9 +139,7 @@ namespace VanPhap.View
                     }
 
                 }
-
-
-
+                connection.Close();
             }
 
 
@@ -299,7 +298,7 @@ namespace VanPhap.View
                         MessageBox.Show("Cập nhật thành công");
                         this.Close();
                     }
-
+                    connection.Close();
 
                 }
 
@@ -328,7 +327,7 @@ namespace VanPhap.View
                         // Thực thi câu lệnh INSERT
                         int rowsAffected = command.ExecuteNonQuery();
                         // Kiểm tra số dòng bị ảnh hưởng
-
+                        connection.Close();
                     }
 
                     SoCauAn form1 = Application.OpenForms.OfType<SoCauAn>().FirstOrDefault();
@@ -637,6 +636,16 @@ namespace VanPhap.View
                 tinhSaoNam(selectedValue11, tuoi);
             }
 
+        }
+
+        private void FormUpdateChuBai_Shown(object sender, EventArgs e)
+        {
+            txt_name.Focus();
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

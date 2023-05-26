@@ -288,6 +288,12 @@ namespace VanPhap.View
 
         private void ChuBai_Load(object sender, EventArgs e)
         {
+            txt_name.Focus();
+            //if (txt_name.Text.Equals(""))
+            //{
+            //    txt_name.Focus();
+            //}
+
             comboBox_NamSinh.DropDownHeight = comboBox_NamSinh.ItemHeight * 14;// nhảy 12 số combobox không được xóa !!!!!!
 
             //    int year = int.Parse(comboBox1.SelectedItem.ToString());
@@ -316,7 +322,6 @@ namespace VanPhap.View
             // Gán dữ liệu từ mảng vào ComboBox
 
             comboBox_NamSinh.Items.AddRange(cuong.ToArray());
-
             // Gán dữ liệu từ mảng vào ComboBox
         }
 
@@ -324,7 +329,7 @@ namespace VanPhap.View
         {
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái không được để trống!");
+                //MessageBox.Show("Chủ bái không được để trống!");
             }
             else
             {
@@ -337,7 +342,7 @@ namespace VanPhap.View
                         string query1 = "SELECT MAX(ID) FROM tblphattu";
                         using (OleDbCommand command = new OleDbCommand(query1, connection))
                         {
-                             using (OleDbDataReader reader = command.ExecuteReader())
+                            using (OleDbDataReader reader = command.ExecuteReader())
                             {
                                 // Kiểm tra nếu có dữ liệu trả về
                                 if (reader.HasRows)
@@ -418,11 +423,11 @@ namespace VanPhap.View
 
                         string nguyenquan = string.Join(" ", words3);
 
-                       
+
                         //double namsinh = double.Parse(txt_birthday1.Text);
 
                         // Tạo đối tượng Command và liên kết với Connection
-                        using (OleDbCommand command = new OleDbCommand(query, connection))  
+                        using (OleDbCommand command = new OleDbCommand(query, connection))
                         {
                             // Gán giá trị cho các tham số trong câu lệnh INSERT
                             command.Parameters.AddWithValue("?", id);
@@ -445,7 +450,7 @@ namespace VanPhap.View
                             // Thực thi câu lệnh INSERT
                             int rowsAffected = command.ExecuteNonQuery();
                             // Kiểm tra số dòng bị ảnh hưởng
-                           
+
                         }
                         string query3 = "INSERT INTO tblChiTietSo ( ID, IDSo, NamNu, NamSinh, Sao,  HoTenUni,  PhapDanhUni)  VALUES (?,?,?,?,?,?,?)";
 
@@ -463,9 +468,9 @@ namespace VanPhap.View
                         string[] arr = selectedValue.Split(' ');
                         double namsinh = double.Parse(arr[0]);
                         string sao = txt_sao.Text;
-                      
-                       
-                        
+
+
+
                         // Tạo đối tượng Command và liên kết với Connection
                         using (OleDbCommand command = new OleDbCommand(query3, connection))
                         {
@@ -477,19 +482,21 @@ namespace VanPhap.View
                             command.Parameters.AddWithValue("?", sao);
                             command.Parameters.AddWithValue("?", hoten);
                             command.Parameters.AddWithValue("?", phapdanh);
-                            
+
 
                             // Thực thi câu lệnh INSERT
                             int rowsAffected = command.ExecuteNonQuery();
                             // Kiểm tra số dòng bị ảnh hưởng
-                           
+
                         }
                     }
                     catch (OleDbException ex)
                     {
                         MessageBox.Show("Lỗi khi thêm dữ liệu vào cơ sở dữ liệu: " + ex.Message);
                     }
+                    connection.Close();
                 }
+
             }
             this.Close();
         }
@@ -507,7 +514,7 @@ namespace VanPhap.View
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int currentYear = DateTime.Now.Year;
-            
+
             string selectedValue = comboBox_NamSinh.SelectedItem.ToString();
 
             string[] arr = selectedValue.Split(' ');
@@ -537,14 +544,14 @@ namespace VanPhap.View
 
         private void comboBox_NamSinh_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void comboBox_GioiTinh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(txt_Tuoi.Text.Equals(""))
+            if (txt_Tuoi.Text.Equals(""))
             {
-               
+
             }
             else
             {
@@ -556,11 +563,22 @@ namespace VanPhap.View
                 tinhSaoNam(selectedValue1, tuoi);
 
             }
+            // Xác định sao  
+        }
 
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
 
-            // Xác định sao
+        }
 
-           
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ChuBai_Shown(object sender, EventArgs e)
+        {
+            txt_name.Focus();
         }
     }
-    }
+}
