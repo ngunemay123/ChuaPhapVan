@@ -137,7 +137,7 @@
             // txt_id
             // 
             this.txt_id.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(358, 17);
+            this.txt_id.Location = new System.Drawing.Point(792, 150);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(10, 35);
             this.txt_id.TabIndex = 58;
@@ -147,7 +147,7 @@
             // txt_id_so
             // 
             this.txt_id_so.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id_so.Location = new System.Drawing.Point(372, 17);
+            this.txt_id_so.Location = new System.Drawing.Point(806, 150);
             this.txt_id_so.Name = "txt_id_so";
             this.txt_id_so.Size = new System.Drawing.Size(10, 35);
             this.txt_id_so.TabIndex = 54;
@@ -159,7 +159,7 @@
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(129, 18);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(226, 35);
+            this.txt_name.Size = new System.Drawing.Size(230, 35);
             this.txt_name.TabIndex = 1;
             // 
             // txt_nickname
@@ -167,7 +167,7 @@
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nickname.Location = new System.Drawing.Point(129, 61);
             this.txt_nickname.Name = "txt_nickname";
-            this.txt_nickname.Size = new System.Drawing.Size(226, 35);
+            this.txt_nickname.Size = new System.Drawing.Size(230, 35);
             this.txt_nickname.TabIndex = 2;
             // 
             // lbl_NickName
@@ -197,7 +197,7 @@
             this.lbl_tuoi.AutoSize = true;
             this.lbl_tuoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_tuoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_tuoi.Location = new System.Drawing.Point(405, 65);
+            this.lbl_tuoi.Location = new System.Drawing.Point(400, 65);
             this.lbl_tuoi.Name = "lbl_tuoi";
             this.lbl_tuoi.Size = new System.Drawing.Size(55, 27);
             this.lbl_tuoi.TabIndex = 42;
@@ -210,9 +210,9 @@
             this.txt_tuoi.Cursor = System.Windows.Forms.Cursors.No;
             this.txt_tuoi.Enabled = false;
             this.txt_tuoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tuoi.Location = new System.Drawing.Point(508, 61);
+            this.txt_tuoi.Location = new System.Drawing.Point(503, 61);
             this.txt_tuoi.Name = "txt_tuoi";
-            this.txt_tuoi.Size = new System.Drawing.Size(226, 35);
+            this.txt_tuoi.Size = new System.Drawing.Size(230, 35);
             this.txt_tuoi.TabIndex = 4;
             this.txt_tuoi.TabStop = false;
             // 
@@ -221,7 +221,7 @@
             this.lbl_Sao.AutoSize = true;
             this.lbl_Sao.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Sao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Sao.Location = new System.Drawing.Point(405, 109);
+            this.lbl_Sao.Location = new System.Drawing.Point(400, 109);
             this.lbl_Sao.Name = "lbl_Sao";
             this.lbl_Sao.Size = new System.Drawing.Size(47, 27);
             this.lbl_Sao.TabIndex = 44;
@@ -244,7 +244,7 @@
             // 
             this.lbl_sex.AutoSize = true;
             this.lbl_sex.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_sex.Location = new System.Drawing.Point(405, 20);
+            this.lbl_sex.Location = new System.Drawing.Point(400, 20);
             this.lbl_sex.Name = "lbl_sex";
             this.lbl_sex.Size = new System.Drawing.Size(97, 27);
             this.lbl_sex.TabIndex = 38;
@@ -256,16 +256,16 @@
             this.txt_sao.Cursor = System.Windows.Forms.Cursors.No;
             this.txt_sao.Enabled = false;
             this.txt_sao.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_sao.Location = new System.Drawing.Point(508, 105);
+            this.txt_sao.Location = new System.Drawing.Point(503, 105);
             this.txt_sao.Name = "txt_sao";
-            this.txt_sao.Size = new System.Drawing.Size(226, 35);
+            this.txt_sao.Size = new System.Drawing.Size(230, 35);
             this.txt_sao.TabIndex = 5;
             this.txt_sao.TabStop = false;
             // 
             // txt_idchubai
             // 
             this.txt_idchubai.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idchubai.Location = new System.Drawing.Point(358, 61);
+            this.txt_idchubai.Location = new System.Drawing.Point(822, 150);
             this.txt_idchubai.Name = "txt_idchubai";
             this.txt_idchubai.Size = new System.Drawing.Size(10, 35);
             this.txt_idchubai.TabIndex = 59;
@@ -276,14 +276,9 @@
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_Form.Controls.Add(this.txt_gioitinh);
             this.pnl_Form.Controls.Add(this.comboBox_gioitinh);
             this.pnl_Form.Controls.Add(this.comboBox_NamSinh);
-            this.pnl_Form.Controls.Add(this.txt_tuoiii);
             this.pnl_Form.Controls.Add(this.lbl_name);
-            this.pnl_Form.Controls.Add(this.txt_idchubai);
-            this.pnl_Form.Controls.Add(this.txt_id_so);
-            this.pnl_Form.Controls.Add(this.txt_id);
             this.pnl_Form.Controls.Add(this.lbl_NickName);
             this.pnl_Form.Controls.Add(this.txt_sao);
             this.pnl_Form.Controls.Add(this.lbl_Birthday);
@@ -303,7 +298,7 @@
             this.txt_gioitinh.BackColor = System.Drawing.SystemColors.Control;
             this.txt_gioitinh.Cursor = System.Windows.Forms.Cursors.No;
             this.txt_gioitinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gioitinh.Location = new System.Drawing.Point(358, 105);
+            this.txt_gioitinh.Location = new System.Drawing.Point(852, 150);
             this.txt_gioitinh.Name = "txt_gioitinh";
             this.txt_gioitinh.Size = new System.Drawing.Size(10, 35);
             this.txt_gioitinh.TabIndex = 67;
@@ -313,36 +308,36 @@
             // 
             // comboBox_gioitinh
             // 
+            this.comboBox_gioitinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_gioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_gioitinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_gioitinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_gioitinh.FormattingEnabled = true;
             this.comboBox_gioitinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.comboBox_gioitinh.Location = new System.Drawing.Point(508, 18);
+            this.comboBox_gioitinh.Location = new System.Drawing.Point(503, 18);
             this.comboBox_gioitinh.Name = "comboBox_gioitinh";
-            this.comboBox_gioitinh.Size = new System.Drawing.Size(226, 35);
+            this.comboBox_gioitinh.Size = new System.Drawing.Size(230, 35);
             this.comboBox_gioitinh.TabIndex = 4;
             this.comboBox_gioitinh.SelectedIndexChanged += new System.EventHandler(this.comboBox_gioitinh_SelectedIndexChanged_1);
             // 
             // comboBox_NamSinh
             // 
+            this.comboBox_NamSinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_NamSinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_NamSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_NamSinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_NamSinh.FormattingEnabled = true;
             this.comboBox_NamSinh.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comboBox_NamSinh.Location = new System.Drawing.Point(129, 105);
             this.comboBox_NamSinh.Name = "comboBox_NamSinh";
-            this.comboBox_NamSinh.Size = new System.Drawing.Size(226, 35);
+            this.comboBox_NamSinh.Size = new System.Drawing.Size(230, 35);
             this.comboBox_NamSinh.TabIndex = 3;
             this.comboBox_NamSinh.SelectedIndexChanged += new System.EventHandler(this.comboBox_NamSinh_SelectedIndexChanged_1);
             // 
             // txt_tuoiii
             // 
             this.txt_tuoiii.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tuoiii.Location = new System.Drawing.Point(372, 61);
+            this.txt_tuoiii.Location = new System.Drawing.Point(836, 150);
             this.txt_tuoiii.Name = "txt_tuoiii";
             this.txt_tuoiii.Size = new System.Drawing.Size(10, 35);
             this.txt_tuoiii.TabIndex = 64;
@@ -388,6 +383,7 @@
             // txt_update
             // 
             this.txt_update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.txt_update.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_update.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_update.ImageIndex = 1;
             this.txt_update.Location = new System.Drawing.Point(791, 46);
@@ -416,6 +412,7 @@
             // btn_cancel
             // 
             this.btn_cancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_cancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancel.ImageIndex = 1;
             this.btn_cancel.Location = new System.Drawing.Point(792, 94);
@@ -435,12 +432,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(933, 576);
+            this.Controls.Add(this.txt_gioitinh);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.lbl_danhsach);
             this.Controls.Add(this.pnl_list);
+            this.Controls.Add(this.txt_tuoiii);
             this.Controls.Add(this.lbl_PhieuDiemThongTin);
             this.Controls.Add(this.txt_update);
+            this.Controls.Add(this.txt_idchubai);
             this.Controls.Add(this.pnl_Form);
+            this.Controls.Add(this.txt_id_so);
+            this.Controls.Add(this.txt_id);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormUpdateNguoiNhanCauAn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

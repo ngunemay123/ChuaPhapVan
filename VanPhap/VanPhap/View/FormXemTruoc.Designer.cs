@@ -192,6 +192,7 @@
             // 
             this.txt_nguyenquan.BackColor = System.Drawing.SystemColors.Control;
             this.txt_nguyenquan.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_nguyenquan.Enabled = false;
             this.txt_nguyenquan.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nguyenquan.Location = new System.Drawing.Point(177, 104);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
@@ -204,6 +205,7 @@
             // 
             this.txt_diachi.BackColor = System.Drawing.SystemColors.Control;
             this.txt_diachi.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_diachi.Enabled = false;
             this.txt_diachi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_diachi.Location = new System.Drawing.Point(177, 149);
             this.txt_diachi.Name = "txt_diachi";
@@ -238,6 +240,7 @@
             // txt_name
             // 
             this.txt_name.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_name.Enabled = false;
             this.txt_name.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(177, 15);
             this.txt_name.Name = "txt_name";
@@ -260,6 +263,7 @@
             // txt_nickname
             // 
             this.txt_nickname.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_nickname.Enabled = false;
             this.txt_nickname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nickname.Location = new System.Drawing.Point(177, 59);
             this.txt_nickname.Name = "txt_nickname";

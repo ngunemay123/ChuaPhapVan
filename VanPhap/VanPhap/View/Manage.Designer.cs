@@ -304,7 +304,6 @@
             // 
             // pnl_Component
             // 
-            this.pnl_Component.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnl_Component.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_Component.Location = new System.Drawing.Point(204, 125);
             this.pnl_Component.Margin = new System.Windows.Forms.Padding(2);
@@ -326,6 +325,7 @@
             this.MainMenuStrip = this.Menu;
             this.MaximizeBox = false;
             this.Name = "form_manage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý sớ cầu";
             this.Load += new System.EventHandler(this.Form_SoThongTin_Load);
             this.Menu.ResumeLayout(false);

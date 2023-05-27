@@ -173,6 +173,7 @@
             // 
             this.txt_Tuoi.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txt_Tuoi.Cursor = System.Windows.Forms.Cursors.No;
+            this.txt_Tuoi.Enabled = false;
             this.txt_Tuoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Tuoi.Location = new System.Drawing.Point(176, 273);
             this.txt_Tuoi.Name = "txt_Tuoi";
@@ -192,8 +193,8 @@
             // 
             // comboBox_NamSinh
             // 
+            this.comboBox_NamSinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_NamSinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_NamSinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_NamSinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_NamSinh.FormattingEnabled = true;
             this.comboBox_NamSinh.Location = new System.Drawing.Point(176, 187);
@@ -225,8 +226,8 @@
             // 
             // comboBox_GioiTinh
             // 
+            this.comboBox_GioiTinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboBox_GioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_GioiTinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox_GioiTinh.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_GioiTinh.FormattingEnabled = true;
             this.comboBox_GioiTinh.Items.AddRange(new object[] {

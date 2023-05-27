@@ -109,7 +109,7 @@
             this.pnl_List.Controls.Add(this.lsv_danhsach_cauan);
             this.pnl_List.Location = new System.Drawing.Point(11, 363);
             this.pnl_List.Name = "pnl_List";
-            this.pnl_List.Size = new System.Drawing.Size(1100, 239);
+            this.pnl_List.Size = new System.Drawing.Size(1080, 239);
             this.pnl_List.TabIndex = 102;
             // 
             // lsv_danhsach_cauan
@@ -134,9 +134,9 @@
             this.lsv_danhsach_cauan.GridLines = true;
             this.lsv_danhsach_cauan.HideSelection = false;
             this.lsv_danhsach_cauan.Location = new System.Drawing.Point(0, 0);
-            this.lsv_danhsach_cauan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsv_danhsach_cauan.Margin = new System.Windows.Forms.Padding(2);
             this.lsv_danhsach_cauan.Name = "lsv_danhsach_cauan";
-            this.lsv_danhsach_cauan.Size = new System.Drawing.Size(1100, 239);
+            this.lsv_danhsach_cauan.Size = new System.Drawing.Size(1080, 239);
             this.lsv_danhsach_cauan.TabIndex = 103;
             this.lsv_danhsach_cauan.UseCompatibleStateImageBehavior = false;
             this.lsv_danhsach_cauan.View = System.Windows.Forms.View.Details;
@@ -223,7 +223,7 @@
             this.txt_nickname.Location = new System.Drawing.Point(182, 59);
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.ReadOnly = true;
-            this.txt_nickname.Size = new System.Drawing.Size(1017, 35);
+            this.txt_nickname.Size = new System.Drawing.Size(999, 35);
             this.txt_nickname.TabIndex = 2;
             this.txt_nickname.TabStop = false;
             this.txt_nickname.TextChanged += new System.EventHandler(this.txt_nickname_TextChanged);
@@ -249,7 +249,7 @@
             this.txt_name.Location = new System.Drawing.Point(182, 15);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(1017, 35);
+            this.txt_name.Size = new System.Drawing.Size(999, 35);
             this.txt_name.TabIndex = 1;
             this.txt_name.TabStop = false;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
@@ -301,7 +301,7 @@
             // pnl_Form
             // 
             this.pnl_Form.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Form.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_Form.Controls.Add(this.lbl_diachi);
             this.pnl_Form.Controls.Add(this.txt_nguyenquan);
             this.pnl_Form.Controls.Add(this.txt_diachi);
@@ -313,7 +313,7 @@
             this.pnl_Form.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnl_Form.Location = new System.Drawing.Point(12, 57);
             this.pnl_Form.Name = "pnl_Form";
-            this.pnl_Form.Size = new System.Drawing.Size(1233, 204);
+            this.pnl_Form.Size = new System.Drawing.Size(1217, 204);
             this.pnl_Form.TabIndex = 31;
             // 
             // lbl_diachi
@@ -338,7 +338,7 @@
             this.txt_nguyenquan.Location = new System.Drawing.Point(182, 104);
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.ReadOnly = true;
-            this.txt_nguyenquan.Size = new System.Drawing.Size(1017, 35);
+            this.txt_nguyenquan.Size = new System.Drawing.Size(999, 35);
             this.txt_nguyenquan.TabIndex = 3;
             this.txt_nguyenquan.TabStop = false;
             // 
@@ -354,7 +354,7 @@
             this.txt_diachi.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.ReadOnly = true;
-            this.txt_diachi.Size = new System.Drawing.Size(1017, 35);
+            this.txt_diachi.Size = new System.Drawing.Size(999, 35);
             this.txt_diachi.TabIndex = 4;
             this.txt_diachi.TabStop = false;
             // 
@@ -375,7 +375,7 @@
             this.btn_lammoi.FlatAppearance.BorderSize = 0;
             this.btn_lammoi.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_lammoi.ImageKey = "add-icon.png";
-            this.btn_lammoi.Location = new System.Drawing.Point(490, 268);
+            this.btn_lammoi.Location = new System.Drawing.Point(490, 271);
             this.btn_lammoi.Margin = new System.Windows.Forms.Padding(0);
             this.btn_lammoi.Name = "btn_lammoi";
             this.btn_lammoi.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -394,7 +394,7 @@
             this.btn_ThemSo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_ThemSo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThemSo.ImageIndex = 0;
-            this.btn_ThemSo.Location = new System.Drawing.Point(32, 268);
+            this.btn_ThemSo.Location = new System.Drawing.Point(32, 271);
             this.btn_ThemSo.Name = "btn_ThemSo";
             this.btn_ThemSo.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_ThemSo.Size = new System.Drawing.Size(130, 40);
@@ -410,7 +410,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageIndex = 4;
-            this.button3.Location = new System.Drawing.Point(185, 268);
+            this.button3.Location = new System.Drawing.Point(185, 271);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -429,7 +429,7 @@
             this.btn_print.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_print.ImageIndex = 10;
-            this.btn_print.Location = new System.Drawing.Point(1122, 532);
+            this.btn_print.Location = new System.Drawing.Point(1102, 532);
             this.btn_print.Margin = new System.Windows.Forms.Padding(0);
             this.btn_print.Name = "btn_print";
             this.btn_print.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -447,7 +447,7 @@
             this.btn_Delete.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Delete.ImageIndex = 8;
-            this.btn_Delete.Location = new System.Drawing.Point(1122, 478);
+            this.btn_Delete.Location = new System.Drawing.Point(1102, 478);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_Delete.Size = new System.Drawing.Size(130, 40);
@@ -464,7 +464,7 @@
             this.btn_Update.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Update.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Update.ImageIndex = 3;
-            this.btn_Update.Location = new System.Drawing.Point(1122, 421);
+            this.btn_Update.Location = new System.Drawing.Point(1102, 421);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btn_Update.Size = new System.Drawing.Size(130, 40);
@@ -482,7 +482,7 @@
             this.btn_Add.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Add.ImageKey = "add-icon.png";
-            this.btn_Add.Location = new System.Drawing.Point(1122, 363);
+            this.btn_Add.Location = new System.Drawing.Point(1102, 363);
             this.btn_Add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -500,7 +500,7 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ImageIndex = 3;
-            this.button1.Location = new System.Drawing.Point(338, 268);
+            this.button1.Location = new System.Drawing.Point(338, 271);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(130, 40);
@@ -517,7 +517,7 @@
             this.btn_len.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_len.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_len.ImageKey = "add-icon.png";
-            this.btn_len.Location = new System.Drawing.Point(643, 268);
+            this.btn_len.Location = new System.Drawing.Point(643, 271);
             this.btn_len.Margin = new System.Windows.Forms.Padding(0);
             this.btn_len.Name = "btn_len";
             this.btn_len.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -534,7 +534,7 @@
             this.btn_xuong.FlatAppearance.BorderSize = 0;
             this.btn_xuong.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_xuong.ImageKey = "add-icon.png";
-            this.btn_xuong.Location = new System.Drawing.Point(796, 268);
+            this.btn_xuong.Location = new System.Drawing.Point(796, 271);
             this.btn_xuong.Margin = new System.Windows.Forms.Padding(0);
             this.btn_xuong.Name = "btn_xuong";
             this.btn_xuong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
@@ -549,7 +549,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 615);
+            this.ClientSize = new System.Drawing.Size(1241, 615);
             this.Controls.Add(this.btn_xuong);
             this.Controls.Add(this.btn_len);
             this.Controls.Add(this.button1);
