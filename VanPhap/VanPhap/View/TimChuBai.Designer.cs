@@ -269,6 +269,7 @@
             this.txt_nguyenquan.Name = "txt_nguyenquan";
             this.txt_nguyenquan.Size = new System.Drawing.Size(696, 35);
             this.txt_nguyenquan.TabIndex = 3;
+            this.txt_nguyenquan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nguyenquan_KeyPress);
             // 
             // txt_diachi
             // 
@@ -279,6 +280,7 @@
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(696, 35);
             this.txt_diachi.TabIndex = 4;
+            this.txt_diachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_diachi_KeyPress);
             // 
             // lbl_nguyenquan
             // 
@@ -311,6 +313,7 @@
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(696, 35);
             this.txt_name.TabIndex = 1;
+            this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             this.txt_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_name_KeyPress);
             // 
             // lbl_NickName
@@ -332,6 +335,7 @@
             this.txt_nickname.Name = "txt_nickname";
             this.txt_nickname.Size = new System.Drawing.Size(696, 35);
             this.txt_nickname.TabIndex = 2;
+            this.txt_nickname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nickname_KeyPress);
             // 
             // btn_cancel
             // 

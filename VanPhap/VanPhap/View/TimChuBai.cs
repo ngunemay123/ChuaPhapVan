@@ -440,5 +440,34 @@ namespace VanPhap.View
         {
             HienDanhSach();
         }
+
+        private void txt_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nickname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btn_tim_kiem_Click(sender, e);
+            }
+        }
+
+        private void txt_nguyenquan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btn_tim_kiem_Click(sender, e);
+            }
+        }
+
+        private void txt_diachi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btn_tim_kiem_Click(sender, e);
+            }
+        }
     }
 }
