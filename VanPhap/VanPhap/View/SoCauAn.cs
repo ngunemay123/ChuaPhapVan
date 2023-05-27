@@ -523,7 +523,7 @@ namespace VanPhap.View
             try
             {
                 // tạo tệp mới
-                string path = @"C:\Git\ChuaPhapVan\VanPhap\html\index.html";
+                string path = @"C:\Users\ACER\AppData\Local\InPhapVan\index.html";
                 File.Create(path).Close();
                 using (StreamWriter sw = new StreamWriter(path))
                 {
@@ -616,7 +616,7 @@ namespace VanPhap.View
 
 
                 }
-                Process.Start("C:\\Git\\ChuaPhapVan\\VanPhap\\html\\index.html");
+                Process.Start("C:\\Users\\ACER\\AppData\\Local\\InPhapVan\\index.html");
             }
             catch (Exception ex)
             {
