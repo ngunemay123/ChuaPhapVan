@@ -312,7 +312,7 @@ namespace VanPhap.View
                         if (lsv_danhsach_cauan.SelectedItems.Count > 0)
                         {
                             // Xóa thành công
-                            MessageBox.Show("Xóa thành công");
+                            //MessageBox.Show("Xóa thành công");
                             HienDanhSach();
                         }
                         else
@@ -631,7 +631,7 @@ namespace VanPhap.View
         {
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
+                //MessageBox.Show("Chủ bái đang trống!\nVui lòng chọn || Có sớ || Chưa có sớ || để thêm chủ bái!");
             }
             else
             {

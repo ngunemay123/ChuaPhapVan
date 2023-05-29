@@ -493,7 +493,7 @@ namespace VanPhap.View
             }
             else
             {
-                MessageBox.Show("Vui lòng nhấn 2 lần người bên dưới để sửa !");
+                //MessageBox.Show("Vui lòng nhấn 2 lần người bên dưới để sửa !");
             }
             txt_name.Text = "";
             txt_nickname.Text = "";

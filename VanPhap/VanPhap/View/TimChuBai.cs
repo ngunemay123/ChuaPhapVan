@@ -107,7 +107,7 @@ namespace VanPhap.View
                             if (lsv_timchubai.SelectedItems.Count > 0)
                             {
                                 // Xóa thành công
-                                MessageBox.Show("Xóa thành công");
+                                //MessageBox.Show("Xóa thành công");
                                 HienDanhSach();
 
                             }

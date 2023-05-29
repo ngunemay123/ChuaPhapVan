@@ -357,7 +357,7 @@ namespace VanPhap.View
                                 else
                                 {
 
-                                    MessageBox.Show("Không có dữ liệu trả về từ câu truy vấn SELECT.");
+                                    //MessageBox.Show("Không có dữ liệu trả về từ câu truy vấn SELECT.");
                                 }
                             }
                         }

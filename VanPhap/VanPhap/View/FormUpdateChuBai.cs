@@ -199,7 +199,7 @@ namespace VanPhap.View
 
             if (txt_name.Text.Equals(""))
             {
-                MessageBox.Show("Chủ bái không được để trống!");
+                //MessageBox.Show("Chủ bái không được để trống!");
             }
             else
             {
@@ -295,7 +295,7 @@ namespace VanPhap.View
                         command.Parameters.AddWithValue("?", id);
 
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Cập nhật thành công");
+                        //MessageBox.Show("Cập nhật thành công");
                         this.Close();
                     }
                     connection.Close();
