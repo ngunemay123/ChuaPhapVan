@@ -63,10 +63,10 @@ namespace VanPhap.View
 
             // In kết quả
             // txt_tuoi.Text = canChi;
-
+            int currentYear = DateTime.Now.Year;
 
             List<string> cuong = new List<string>();
-            for (int i = 1900; i < 2023; i++)
+            for (int i = 1900; i < currentYear; i++)
             {
                 int canIndex = (i - 4) % 10;
                 int chiIndex = (i - 4) % 12;
@@ -451,7 +451,7 @@ namespace VanPhap.View
 
                 string hoten = string.Join(" ", words);
                 ///////////////////
-                string inputPhapDanh = txt_name.Text;
+                string inputPhapDanh = txt_nickname.Text;
                 string[] words1 = inputPhapDanh.Split(' ');
 
                 for (int i = 0; i < words1.Length; i++)
@@ -490,6 +490,10 @@ namespace VanPhap.View
 
 
 
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhấn 2 lần người bên dưới để sửa !");
             }
             txt_name.Text = "";
             txt_nickname.Text = "";
@@ -566,6 +570,7 @@ namespace VanPhap.View
 
         private void comboBox_gioitinh_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            
             string selectedValue = txt_tuoi.Text;
             string[] arr = selectedValue.Split(' ');
             int tuoi = int.Parse(arr[0]);

@@ -524,9 +524,10 @@ namespace VanPhap.View
             string[] can = { "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ", "Canh", "Tân", "Nhâm", "Quý" };
             string[] chi = { "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi" };
             txt_id_so.Text = DataFromForm11;
+            int currentYear = DateTime.Now.Year;
 
             List<string> cuong = new List<string>();
-            for (int i = 1900; i < 2023; i++)
+            for (int i = 1900; i < currentYear; i++)
             {
                 int canIndex = (i - 4) % 10;
                 int chiIndex = (i - 4) % 12;
