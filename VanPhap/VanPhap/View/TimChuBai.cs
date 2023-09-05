@@ -18,7 +18,7 @@ namespace VanPhap.View
     {
         private Form activeForm;
 
-        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Z:\\Demo.accdb";
+        string strCon = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Z:\\Manager1.mdb";
         OleDbConnection sqlCon = null;
         //Hàm mở kết nối db
         public void OpenConection()
@@ -144,51 +144,93 @@ namespace VanPhap.View
         public string loaiso { get; set; }
         private void btn_tim_kiem_Click(object sender, EventArgs e)
         {
-
-            if (txt_name.Text.Equals("") && txt_diachi.Text.Equals("") && txt_nguyenquan.Text.Equals(""))
+            if (string.IsNullOrWhiteSpace(txt_name.Text) && string.IsNullOrWhiteSpace(txt_diachi.Text) && string.IsNullOrWhiteSpace(txt_nguyenquan.Text))
             {
-                //MessageBox.Show("Vui lòng tìm kiếm theo các cách sau\nNhập tên chủ bái || Nhập địa chỉ cần tìm || Nhập nguyên quán");
+                // Không có thông tin tìm kiếm
+                return;
             }
-            else
+
+            lsv_timchubai.Items.Clear();
+
+            using (OleDbConnection sqlCon = new OleDbConnection(strCon))
             {
-                lsv_timchubai.Items.Clear();
-                string name = txt_name.Text;
-                string diachi1 = txt_diachi.Text;
-                string nguyenquan1 = txt_nguyenquan.Text;
-                string phapdanh1 = txt_nickname.Text;
+                sqlCon.Open();
 
-                OpenConection();
+                string sqlQuery = "SELECT ID, HoTenUni, PhapDanhUni, DiaChiUni, NguyenQuanUni FROM tblPhatTu WHERE 1 = 1 ";
+                List<string> conditions = new List<string>();
 
-                OleDbCommand sqlCmd = new OleDbCommand();
-                sqlCmd.CommandType = System.Data.CommandType.Text;
-
-                //sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%"+name+"%'";
-                sqlCmd.CommandText = "SELECT ID, HoTenUni,  PhapDanhUni,  DiaChiUni,  NguyenQuanUni FROM tblPhatTu where HoTenUni  LIKE '%" + name + "%'  AND DiaChiUni LIKE '%" + diachi1 + "%' AND NguyenQuanUni LIKE '%" + nguyenquan1 + "%' AND PhapDanhUni LIKE '%" + phapdanh1 + "%'  ORDER BY ID DESC ";
-                sqlCmd.Connection = sqlCon;
-
-                OleDbDataReader reader = sqlCmd.ExecuteReader();
-
-                while (reader.Read())
+                if (!string.IsNullOrWhiteSpace(txt_name.Text))
                 {
-
-                    double idSo = reader.GetDouble(0);
-                    string hoten = reader.GetString(1);
-                    string phapdanh = reader.GetString(2);
-                    string diachi = reader.GetString(3);
-                    string nguyenquan = reader.GetString(4);
-
-                    //txt_id_chu_bai.Text = idSo.ToString();
-                    ListViewItem lvi = new ListViewItem(idSo.ToString());
-                    lvi.SubItems.Add(hoten);
-                    lvi.SubItems.Add(phapdanh);
-                    lvi.SubItems.Add(diachi);
-                    lvi.SubItems.Add(nguyenquan);
-
-                    lsv_timchubai.Items.Add(lvi);
+                    conditions.Add("HoTenUni LIKE @HoTen");
                 }
-                CloseConection();
+
+                if (!string.IsNullOrWhiteSpace(txt_diachi.Text))
+                {
+                    conditions.Add("DiaChiUni LIKE @DiaChi");
+                }
+
+                if (!string.IsNullOrWhiteSpace(txt_nguyenquan.Text))
+                {
+                    conditions.Add("NguyenQuanUni LIKE @NguyenQuan");
+                }
+
+                if (!string.IsNullOrWhiteSpace(txt_nickname.Text))
+                {
+                    conditions.Add("PhapDanhUni LIKE @PhapDanh");
+                }
+
+                if (conditions.Any())
+                {
+                    sqlQuery += "AND " + string.Join(" AND ", conditions);
+                }
+
+                sqlQuery += " ORDER BY ID DESC";
+
+                using (OleDbCommand sqlCmd = new OleDbCommand(sqlQuery, sqlCon))
+                {
+                    if (!string.IsNullOrWhiteSpace(txt_name.Text))
+                    {
+                        sqlCmd.Parameters.AddWithValue("@HoTen", "%" + txt_name.Text + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(txt_diachi.Text))
+                    {
+                        sqlCmd.Parameters.AddWithValue("@DiaChi", "%" + txt_diachi.Text + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(txt_nguyenquan.Text))
+                    {
+                        sqlCmd.Parameters.AddWithValue("@NguyenQuan", "%" + txt_nguyenquan.Text + "%");
+                    }
+
+                    if (!string.IsNullOrWhiteSpace(txt_nickname.Text))
+                    {
+                        sqlCmd.Parameters.AddWithValue("@PhapDanh", "%" + txt_nickname.Text + "%");
+                    }
+
+                    using (OleDbDataReader reader = sqlCmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            double idSo = reader.GetDouble(0);
+                            string hoten = reader.GetString(1);
+                            string phapdanh = reader.GetString(2);
+                            string diachi = reader.GetString(3);
+                            string nguyenquan = reader.GetString(4);
+
+                            ListViewItem lvi = new ListViewItem(idSo.ToString());
+                            lvi.SubItems.Add(hoten);
+                            lvi.SubItems.Add(phapdanh);
+                            lvi.SubItems.Add(diachi);
+                            lvi.SubItems.Add(nguyenquan);
+
+                            lsv_timchubai.Items.Add(lvi);
+                        }
+                    }
+                }
             }
         }
+
 
         public string IDTuUpdate { get;}
         public void timKiem()
